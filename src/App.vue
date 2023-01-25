@@ -8,12 +8,24 @@
 </template>
 
 <style>
+:root {
+  --primary: #23231a;
+  --secondary: #322f20;
+  --terciary: #6a5837;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  background-color: var(--primary);
+  color: #888;
 }
 
 nav {
@@ -22,7 +34,6 @@ nav {
 
 nav a {
   font-weight: bold;
-  color: #2c3e50;
 }
 
 nav a.router-link-exact-active {
