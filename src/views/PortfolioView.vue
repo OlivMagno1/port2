@@ -102,13 +102,17 @@ export default {
 .header h1 {
   font-size: 5rem;
   margin-left: 8rem;
+  font-family: "Unbounded";
+  font-variation-settings: "wght" 100;
 }
 
 .header p {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-style: italic;
+  font-weight: 400;
   opacity: 0.5;
   margin-bottom: 1rem;
+  color: var(--secondary);
 }
 
 .deck {
@@ -130,10 +134,10 @@ export default {
   margin: 0 4rem 4rem 0;
 
   border: solid;
-  background-color: var(--background-alt);
+  background-color: var(--secondary);
   border-width: 0px;
   border-radius: 0.5rem;
-  color: var(--font-alt);
+  color: var(--primary);
 }
 
 .card img {
@@ -151,7 +155,7 @@ export default {
   justify-content: space-evenly;
   text-align: justify;
   margin: 0 1rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .card_details .links {
@@ -164,27 +168,27 @@ export default {
 }
 
 h2 {
+  font-family: "Unbounded";
   font-size: 1.4rem;
 }
 
 h3 {
-  font-weight: 100;
+  font-weight: 400;
   font-size: 0.9rem;
 }
 
-a {
-  color: var(--font-alt);
+a,
+a:visited {
+  color: var(--primary);
   text-decoration: none;
   font-weight: 400;
   font-size: 0.8rem;
   transition: 0.2s;
 }
 
-a:hover {
-  color: var(--font-hover);
-}
-
-a:visited {
-  color: var(--font-visited);
+a:hover,
+a:hover:visited {
+  color: var(--secondary);
+  background-color: var(--primary);
 }
 </style>
