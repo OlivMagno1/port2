@@ -60,8 +60,9 @@
 }
 
 :root {
-  --primary: #283618;
-  --secondary: #fefae0;
+  --primary: #151c0d;
+  --secondary: #0a0e06;
+  --clear: #fefae0;
   --accent: #dda15e;
 }
 
@@ -75,7 +76,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background-color: var(--primary);
+  background-color: var(--secondary);
   color: var(--accent);
 }
 

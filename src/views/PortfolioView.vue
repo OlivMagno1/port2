@@ -8,29 +8,34 @@
       </p>
     </div>
     <div class="deck">
-      <div v-for="(slide, index) in portfolioData" :key="index" class="card">
+      <div
+        class="card"
+        v-for="(slide, index) in portfolioData"
+        :key="index"
+        @click="selectedProject = index"
+      >
         <img :src="require(`@/assets/images/${slide.image}.jpg`)" />
         <div class="card_details">
           <h2>{{ slide.projectTitle }}</h2>
           <h3>{{ slide.description }}</h3>
-          <p class="front">{{ slide.frontend }}</p>
-          <p class="back">{{ slide.backend }}</p>
-          <div class="links">
-            <a class="link" :href="slide.address" target="_blank">
-              Abrir este projeto
-            </a>
-            <a class="link" :href="slide.github" target="_blank">Github</a>
-          </div>
         </div>
+      </div>
+    </div>
+    <div class="worktable" v-for="(slide, index) in portfolioData" :key="index">
+      <div class="zoomedInfo" v-if="index === selectedProject">
+        <h2>{{ slide.projectTitle }}</h2>
+        <h3>{{ slide.projectTitle }}</h3>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { ref } from "vue";
 export default {
   name: "PortfolioView",
   setup() {
+    const selectedProject = ref("");
     const portfolioData = [
       {
         projectTitle: "Aplicativo",
@@ -83,7 +88,7 @@ export default {
           "Exercício de cópia da interface visual do Ableton apenas por observação",
       },
     ];
-    return { portfolioData };
+    return { portfolioData, selectedProject };
   },
 };
 </script>
@@ -91,9 +96,15 @@ export default {
 <style scoped>
 .background {
   height: 100vh;
+  display: flex;
+  flex-flow: row nowrap;
 }
 
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
   display: flex;
   flex-flow: row nowrap;
   align-items: flex-end;
@@ -101,7 +112,6 @@ export default {
 
 .header h1 {
   font-size: 5rem;
-  margin-left: 8rem;
   font-family: "Unbounded";
   font-variation-settings: "wght" 100;
 }
@@ -116,8 +126,10 @@ export default {
 }
 
 .deck {
-  width: calc(100vw-3rem);
-  margin: 2rem 0 0 8rem;
+  background-color: var(--secondary);
+  width: 40rem;
+  height: 41rem;
+  margin: 2rem 0 0 0;
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
@@ -130,20 +142,25 @@ export default {
   position: relative;
 
   width: 30rem;
-  height: 15rem;
-  margin: 0 4rem 4rem 0;
+  height: 8rem;
+  margin-top: 0.1rem;
 
   border: solid;
-  background-color: var(--secondary);
+  background-color: var(--primary);
   border-width: 0px;
-  border-radius: 0.5rem;
+  color: var(--clear);
+  transition: 0.2s;
+}
+
+.card:hover {
+  background-color: var(--clear);
   color: var(--primary);
 }
 
 .card img {
   object-fit: contain;
   opacity: 0.7;
-  width: 10rem;
+  width: 5rem;
   max-height: 100%;
   border-radius: 0.5rem 0 0 0.5rem;
 }
@@ -158,18 +175,10 @@ export default {
   font-size: 1rem;
 }
 
-.card_details .links {
-  width: 100%;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: space-between;
-  justify-content: space-evenly;
-  text-align: justify;
-}
-
 h2 {
   font-family: "Unbounded";
   font-size: 1.4rem;
+  color: var(--accent);
 }
 
 h3 {
@@ -190,5 +199,18 @@ a:hover,
 a:hover:visited {
   color: var(--secondary);
   background-color: var(--primary);
+}
+
+.worktable {
+  position: relative;
+  margin: 2rem 0 0 0;
+  width: 50vw;
+  height: 50vh;
+}
+
+.zoomedInfo {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 </style>
