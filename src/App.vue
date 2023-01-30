@@ -1,9 +1,4 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/knowledge">Conhecimentos</router-link> |
-    <router-link to="/portfolio">Portfolio</router-link>
-  </nav>
   <router-view />
 </template>
 
@@ -80,15 +75,59 @@
   color: var(--accent);
 }
 
-nav {
-  padding: 30px;
+.background {
+  height: 100vh;
+  display: flex;
+  flex-flow: row nowrap;
 }
 
-nav a {
-  font-weight: bold;
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.header h1 {
+  font-size: 5rem;
+  font-family: "Unbounded";
+  font-variation-settings: "wght" 100;
+}
+
+.header p {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 400;
+  opacity: 0.5;
+  margin-bottom: 1rem;
+  color: var(--clear);
+}
+
+.subheader {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 6rem;
+  left: 0;
+  height: 2rem;
+  width: 23rem;
+  z-index: 101;
+}
+
+.subheader a,
+.subheader a:visited {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1.2rem;
+  transition: 0.2s;
+}
+
+.subheader a:hover {
+  color: var(--clear);
 }
 </style>
