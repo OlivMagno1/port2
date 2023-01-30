@@ -7,9 +7,24 @@
         acessados pelo github.
       </p>
     </div>
+    <div class="subheader">
+      <router-link to="/">Home</router-link>
+      <router-link to="/knowledge">Conhecimentos</router-link>
+    </div>
     <div class="deck">
       <div
+        class="close"
+        v-show="selectedProject != -1"
+        @click="selectedProject = -1"
+      >
+        x
+      </div>
+      <div
         class="card"
+        :class="{
+          expanded: checkActual(index),
+          short: !checkActual(index),
+        }"
         v-for="(slide, index) in portfolioData"
         :key="index"
         @click="selectedProject = index"
@@ -17,14 +32,11 @@
         <img :src="require(`@/assets/images/${slide.image}.jpg`)" />
         <div class="card_details">
           <h2>{{ slide.projectTitle }}</h2>
-          <h3>{{ slide.description }}</h3>
+          <h3 v-if="selectedProject != index">{{ slide.sinopsis }}</h3>
+          <p v-if="selectedProject === index">
+            {{ slide.description }}
+          </p>
         </div>
-      </div>
-    </div>
-    <div class="worktable" v-for="(slide, index) in portfolioData" :key="index">
-      <div class="zoomedInfo" v-if="index === selectedProject">
-        <h2>{{ slide.projectTitle }}</h2>
-        <h3>{{ slide.projectTitle }}</h3>
       </div>
     </div>
   </div>
@@ -35,7 +47,13 @@ import { ref } from "vue";
 export default {
   name: "PortfolioView",
   setup() {
-    const selectedProject = ref("");
+    const selectedProject = ref(-1);
+
+    const checkActual = (index) => {
+      if (selectedProject.value === index) return true;
+      else return false;
+    };
+
     const portfolioData = [
       {
         projectTitle: "Aplicativo",
@@ -44,26 +62,30 @@ export default {
         image: "placeholder",
         frontend: ["Vue.js", "Javascript"],
         backend: ["Stytch", "Funções Serverless"],
+        sinopsis: "Sistema de Cadastro e Login com base em e-mail e senha",
         description:
-          "Sistema de Cadastro e Login com base em e-mail e senha (padrão zxcvbn)",
+          "Website desenvolvido em Vue3, apresentando uma interface simples para um usuário fazer login. Caso o usuário não possua uma conta registrada, pode se cadastrar pelo mesmo sistema. A interação é feita utilizando e-mail e senha. A aplicação foi desenvolvida em Vue3. A verificação de login ou cadastro é realizada pelo Stytch, implementado no sistema por meio de funções serverless do Netlify.",
       },
       {
-        projectTitle: "Portfolio 1.0",
+        projectTitle: "Portfolio",
         address: "placeholder",
         github: "placeholder",
         image: "folio",
         frontend: ["Vue.js", "Javascript"],
         backend: "",
+        sinopsis: "Website de um portfolio",
         description:
           "Meu portfolio anterior. Utilizava a implementação de um carrossel para navegar entre os projetos, foi descontinuado pois dificulta a visualização com mais de 3 projetos no portfolio",
       },
       {
-        projectTitle: "Arquimovelaria",
+        projectTitle: "Movelaria",
         address: "https://elaborate-granita-5568c7.netlify.app",
         github: "https://github.com/OlivMagno1/arquimovelaria",
         image: "moveis",
         frontend: ["Vue.js", "Javascript"],
         backend: "",
+        sinopsis:
+          "Website de apresentação para uma empresa de móveis planejados",
         description:
           "Design e implementação de uma página web para uma empresa de móveis planejados",
       },
@@ -74,6 +96,7 @@ export default {
         image: "caf",
         frontend: "Vue.js",
         backend: "",
+        sinopsis: "Exercício de cópia de interface por observação",
         description:
           "Exercício de cópia da interface visual do Lobe apenas por observação",
       },
@@ -84,11 +107,12 @@ export default {
         image: "plat",
         frontend: "Vue.js",
         backend: "",
+        sinopsis: "Exercício de cópia de interface por observação",
         description:
           "Exercício de cópia da interface visual do Ableton apenas por observação",
       },
     ];
-    return { portfolioData, selectedProject };
+    return { portfolioData, selectedProject, checkActual };
   },
 };
 </script>
@@ -122,16 +146,28 @@ export default {
   font-weight: 400;
   opacity: 0.5;
   margin-bottom: 1rem;
-  color: var(--secondary);
+  color: var(--clear);
+}
+
+.subheader {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 6rem;
+  left: 0;
+  height: 2rem;
+  width: 23rem;
+  z-index: 101;
 }
 
 .deck {
   background-color: var(--secondary);
-  width: 40rem;
+  width: 80rem;
   height: 41rem;
-  margin: 2rem 0 0 0;
+  margin: 8rem 0 0 0;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
   align-items: flex-start;
   justify-content: flex-start;
 }
@@ -139,20 +175,36 @@ export default {
 .card {
   display: flex;
   flex-flow: row nowrap;
-  position: relative;
 
-  width: 30rem;
-  height: 8rem;
-  margin-top: 0.1rem;
-
-  border: solid;
+  margin: 0.1rem;
   background-color: var(--primary);
-  border-width: 0px;
   color: var(--clear);
   transition: 0.2s;
 }
 
-.card:hover {
+.short {
+  cursor: pointer;
+  position: relative;
+  width: 30rem;
+  height: 8rem;
+}
+
+.expanded {
+  position: absolute;
+  left: 30.2rem;
+  width: 60rem;
+  height: 40rem;
+}
+
+.close {
+  z-index: 100;
+  position: absolute;
+  left: 87.5rem;
+  top: 9rem;
+  cursor: pointer;
+}
+
+.short:hover {
   background-color: var(--clear);
   color: var(--primary);
 }
@@ -175,6 +227,16 @@ export default {
   font-size: 1rem;
 }
 
+.short_card_details {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  text-align: justify;
+  margin: 0 1rem;
+  font-size: 1rem;
+}
+
 h2 {
   font-family: "Unbounded";
   font-size: 1.4rem;
@@ -184,33 +246,5 @@ h2 {
 h3 {
   font-weight: 400;
   font-size: 0.9rem;
-}
-
-a,
-a:visited {
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 0.8rem;
-  transition: 0.2s;
-}
-
-a:hover,
-a:hover:visited {
-  color: var(--secondary);
-  background-color: var(--primary);
-}
-
-.worktable {
-  position: relative;
-  margin: 2rem 0 0 0;
-  width: 50vw;
-  height: 50vh;
-}
-
-.zoomedInfo {
-  position: fixed;
-  top: 0;
-  left: 0;
 }
 </style>
