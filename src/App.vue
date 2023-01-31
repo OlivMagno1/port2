@@ -1,6 +1,18 @@
 <template>
   <router-view />
+  <FooterBar />
 </template>
+
+<script>
+import FooterBar from "./components/FooterBar.vue";
+
+export default {
+  name: "App",
+  components: {
+    FooterBar,
+  },
+};
+</script>
 
 <style>
 @font-face {
@@ -56,6 +68,7 @@
 
 :root {
   --primary: #151c0d;
+  --primary-light: #1f2a13;
   --secondary: #0a0e06;
   --clear: #fefae0;
   --accent: #dda15e;
@@ -76,7 +89,7 @@
 }
 
 .background {
-  height: 100vh;
+  height: 56.2rem;
   display: flex;
   flex-flow: row nowrap;
 }
