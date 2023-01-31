@@ -21,23 +21,55 @@
       </div>
       <div
         class="card"
-        :class="{
-          expanded: checkActual(index),
-          short: !checkActual(index),
-        }"
         v-for="(slide, index) in portfolioData"
         :key="index"
+        :class="{ chosen: checkActual(index) }"
         @click="selectedProject = index"
       >
-        <img :src="require(`@/assets/images/${slide.image}.jpg`)" />
-        <div class="card_details">
+        <img
+          v-if="!checkActual(index)"
+          :src="require(`@/assets/images/${slide.image}.jpg`)"
+        />
+        <div v-if="!checkActual(index)" class="card_details">
           <h2>{{ slide.projectTitle }}</h2>
-          <h3 v-if="selectedProject != index">{{ slide.sinopsis }}</h3>
-          <p v-if="selectedProject === index">
-            {{ slide.description }}
-          </p>
+          <h3>{{ slide.sinopsis }}</h3>
         </div>
       </div>
+    </div>
+    <div class="focus" :class="{ valid: checkValid() }">
+      <h2 id="placeholder-title" v-if="selectedProject < 0">
+        Selecione um projeto para ver mais informações
+      </h2>
+      <h2 v-if="selectedProject >= 0">
+        {{ portfolioData[selectedProject].projectTitle }}
+      </h2>
+      <img
+        v-if="selectedProject >= 0"
+        :src="
+          require(`@/assets/images/${portfolioData[selectedProject].image}.jpg`)
+        "
+      />
+      <p v-if="selectedProject >= 0">
+        {{ portfolioData[selectedProject].description }}
+      </p>
+      <p v-if="selectedProject >= 0">
+        {{ portfolioData[selectedProject].frontend }}
+      </p>
+      <p v-if="selectedProject >= 0">
+        {{ portfolioData[selectedProject].backend }}
+      </p>
+      <a
+        v-if="selectedProject >= 0"
+        :href="portfolioData[selectedProject].address"
+      >
+        link
+      </a>
+      <a
+        v-if="selectedProject >= 0"
+        :href="portfolioData[selectedProject].github"
+      >
+        Github
+      </a>
     </div>
   </div>
 </template>
@@ -51,6 +83,11 @@ export default {
 
     const checkActual = (index) => {
       if (selectedProject.value === index) return true;
+      else return false;
+    };
+
+    const checkValid = () => {
+      if (selectedProject.value >= 0) return true;
       else return false;
     };
 
@@ -112,22 +149,16 @@ export default {
           "Exercício de cópia da interface visual do Ableton apenas por observação",
       },
     ];
-    return { portfolioData, selectedProject, checkActual };
+    return { portfolioData, selectedProject, checkActual, checkValid };
   },
 };
 </script>
 
 <style scoped>
-.background {
-  height: 100vh;
-  display: flex;
-  flex-flow: row nowrap;
-}
-
 .header {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 2.5rem;
+  left: 5rem;
   z-index: 100;
   display: flex;
   flex-flow: row nowrap;
@@ -154,8 +185,8 @@ export default {
   flex-flow: row nowrap;
   justify-content: space-evenly;
   position: absolute;
-  top: 6rem;
-  left: 0;
+  top: 8.5rem;
+  left: 5rem;
   height: 2rem;
   width: 23rem;
   z-index: 101;
@@ -163,9 +194,8 @@ export default {
 
 .deck {
   background-color: var(--secondary);
-  width: 80rem;
   height: 41rem;
-  margin: 8rem 0 0 0;
+  margin: 13rem 0 0 5rem;
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-start;
@@ -175,46 +205,40 @@ export default {
 .card {
   display: flex;
   flex-flow: row nowrap;
-
-  margin: 0.1rem;
-  background-color: var(--primary);
+  background-color: var(--primary-light);
   color: var(--clear);
-  transition: 0.2s;
-}
-
-.short {
-  cursor: pointer;
   position: relative;
+
   width: 30rem;
   height: 8rem;
+  margin: 0.1rem;
+
+  transition: 0.2s;
+  cursor: pointer;
 }
 
-.expanded {
-  position: absolute;
-  left: 30.2rem;
-  width: 60rem;
-  height: 40rem;
+.card:hover:not(chosen) {
+  background-color: var(--primary);
+}
+
+.chosen {
+  background-color: var(--primary);
+  height: 3rem;
 }
 
 .close {
   z-index: 100;
   position: absolute;
-  left: 87.5rem;
-  top: 9rem;
+  left: 92.5rem;
+  top: 14rem;
   cursor: pointer;
-}
-
-.short:hover {
-  background-color: var(--clear);
-  color: var(--primary);
 }
 
 .card img {
   object-fit: contain;
   opacity: 0.7;
-  width: 5rem;
-  max-height: 100%;
-  border-radius: 0.5rem 0 0 0.5rem;
+  height: 8rem;
+  max-width: 100%;
 }
 
 .card_details {
@@ -227,14 +251,36 @@ export default {
   font-size: 1rem;
 }
 
-.short_card_details {
+.focus {
   display: flex;
   flex-flow: column nowrap;
-  align-items: flex-start;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 35.4rem;
+  top: 13.1rem;
+  background-color: var(--secondary);
+
+  width: 59rem;
+  height: 35.8rem;
+}
+
+.valid {
   text-align: justify;
-  margin: 0 1rem;
-  font-size: 1rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: var(--primary);
+}
+
+#placeholder-title {
+  color: var(--primary-light);
+}
+
+.focus img {
+  object-fit: contain;
+  opacity: 0.7;
+  width: 5rem;
+  max-height: 100%;
 }
 
 h2 {
