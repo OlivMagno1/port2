@@ -96,8 +96,8 @@ export default {
 
 .header {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 2.5rem;
+  left: 5rem;
   z-index: 100;
   display: flex;
   flex-flow: row nowrap;
@@ -124,8 +124,8 @@ export default {
   flex-flow: row nowrap;
   justify-content: space-evenly;
   position: absolute;
-  top: 6rem;
-  left: 0;
+  top: 8rem;
+  left: 3rem;
   height: 2rem;
   width: 23rem;
   z-index: 101;
