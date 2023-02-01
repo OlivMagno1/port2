@@ -28,7 +28,9 @@
       >
         <img
           v-if="!checkActual(index)"
-          :src="require(`@/assets/images/${slide.image}.jpg`)"
+          :src="
+            require(`@/assets/images/${portfolioData[index].folder}/${slide.snapshot}.jpg`)
+          "
         />
         <div v-if="!checkActual(index)" class="card_details">
           <h2>{{ slide.projectTitle }}</h2>
@@ -43,33 +45,30 @@
       <h2 v-if="selectedProject >= 0">
         {{ portfolioData[selectedProject].projectTitle }}
       </h2>
-      <img
-        v-if="selectedProject >= 0"
-        :src="
-          require(`@/assets/images/${portfolioData[selectedProject].image}.jpg`)
-        "
-      />
+      <div class="album" v-if="selectedProject >= 0">
+        <img
+          v-for="(image, imgIndex) in portfolioData[selectedProject].image"
+          :key="imgIndex"
+          :src="
+            require(`@/assets/images/${portfolioData[selectedProject].folder}/${image}.jpg`)
+          "
+        />
+      </div>
       <p v-if="selectedProject >= 0">
         {{ portfolioData[selectedProject].description }}
       </p>
-      <p v-if="selectedProject >= 0">
-        {{ portfolioData[selectedProject].frontend }}
-      </p>
-      <p v-if="selectedProject >= 0">
-        {{ portfolioData[selectedProject].backend }}
-      </p>
-      <a
-        v-if="selectedProject >= 0"
-        :href="portfolioData[selectedProject].address"
-      >
-        link
-      </a>
-      <a
-        v-if="selectedProject >= 0"
-        :href="portfolioData[selectedProject].github"
-      >
-        Github
-      </a>
+      <div class="container tag" v-if="selectedProject >= 0">
+        <p
+          v-for="(tags, tagIndex) in portfolioData[selectedProject].tags"
+          :key="tagIndex"
+        >
+          {{ tags }}
+        </p>
+      </div>
+      <div class="container link" v-if="selectedProject >= 0">
+        <a :href="portfolioData[selectedProject].address">link</a>
+        <a :href="portfolioData[selectedProject].github">Github</a>
+      </div>
     </div>
   </div>
 </template>
@@ -96,9 +95,10 @@ export default {
         projectTitle: "Aplicativo",
         address: "https://admirable-baklava-67109e.netlify.app/",
         github: "https://github.com/OlivMagno1/loginsystem",
-        image: "placeholder",
-        frontend: ["Vue.js", "Javascript"],
-        backend: ["Stytch", "Funções Serverless"],
+        folder: "aplicativo",
+        snapshot: "placeholder1",
+        image: ["placeholder1"],
+        tags: ["Vue.js", "Javascript", "Stytch", "Funções Serverless"],
         sinopsis: "Sistema de Cadastro e Login com base em e-mail e senha",
         description:
           "Website desenvolvido em Vue3, apresentando uma interface simples para um usuário fazer login. Caso o usuário não possua uma conta registrada, pode se cadastrar pelo mesmo sistema. A interação é feita utilizando e-mail e senha. A aplicação foi desenvolvida em Vue3. A verificação de login ou cadastro é realizada pelo Stytch, implementado no sistema por meio de funções serverless do Netlify.",
@@ -107,9 +107,10 @@ export default {
         projectTitle: "Portfolio",
         address: "placeholder",
         github: "placeholder",
-        image: "folio",
-        frontend: ["Vue.js", "Javascript"],
-        backend: "",
+        folder: "portfolio",
+        snapshot: "portfolio1",
+        image: ["portfolio1"],
+        tags: ["Vue.js", "Javascript"],
         sinopsis: "Website de um portfolio",
         description:
           "Meu portfolio anterior. Utilizava a implementação de um carrossel para navegar entre os projetos, foi descontinuado pois dificulta a visualização com mais de 3 projetos no portfolio",
@@ -118,9 +119,10 @@ export default {
         projectTitle: "Movelaria",
         address: "https://elaborate-granita-5568c7.netlify.app",
         github: "https://github.com/OlivMagno1/arquimovelaria",
-        image: "moveis",
-        frontend: ["Vue.js", "Javascript"],
-        backend: "",
+        folder: "movelaria",
+        snapshot: "movelaria1",
+        image: ["movelaria1"],
+        tags: ["Vue.js", "Javascript"],
         sinopsis:
           "Website de apresentação para uma empresa de móveis planejados",
         description:
@@ -130,9 +132,10 @@ export default {
         projectTitle: "Café",
         address: "https://tranquil-clafoutis-236e51.netlify.app",
         github: "https://github.com/OlivMagno1/cafe",
-        image: "caf",
-        frontend: "Vue.js",
-        backend: "",
+        folder: "cafe",
+        snapshot: "cafe1",
+        image: ["cafe1", "cafe2", "cafe3"],
+        tags: ["Vue.js"],
         sinopsis: "Exercício de cópia de interface por observação",
         description:
           "Exercício de cópia da interface visual do Lobe apenas por observação",
@@ -141,9 +144,10 @@ export default {
         projectTitle: "Plataforma",
         address: "https://clinquant-malasada-132d92.netlify.app",
         github: "https://github.com/OlivMagno1/plataforma",
-        image: "plat",
-        frontend: "Vue.js",
-        backend: "",
+        folder: "plataforma",
+        snapshot: "plataforma1",
+        image: ["plataforma1", "plataforma2", "plataforma3"],
+        tags: ["Vue.js"],
         sinopsis: "Exercício de cópia de interface por observação",
         description:
           "Exercício de cópia da interface visual do Ableton apenas por observação",
@@ -155,43 +159,6 @@ export default {
 </script>
 
 <style scoped>
-.header {
-  position: absolute;
-  top: 2.5rem;
-  left: 5rem;
-  z-index: 100;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: flex-end;
-}
-
-.header h1 {
-  font-size: 5rem;
-  font-family: "Unbounded";
-  font-variation-settings: "wght" 100;
-}
-
-.header p {
-  font-size: 1rem;
-  font-style: italic;
-  font-weight: 400;
-  opacity: 0.5;
-  margin-bottom: 1rem;
-  color: var(--clear);
-}
-
-.subheader {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-evenly;
-  position: absolute;
-  top: 8.5rem;
-  left: 5rem;
-  height: 2rem;
-  width: 23rem;
-  z-index: 101;
-}
-
 .deck {
   background-color: var(--secondary);
   height: 41rem;
@@ -263,6 +230,78 @@ export default {
 
   width: 59rem;
   height: 35.8rem;
+}
+
+.focus h2 {
+  font-size: 3rem;
+  margin: 1rem 0 0 1rem;
+}
+
+.focus .album {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--primary);
+  margin: 1rem 0 0 1rem;
+  padding: 0.5rem;
+  height: 15rem;
+}
+
+.focus .album img {
+  margin: 0.5rem;
+  height: 15rem;
+  width: auto;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.focus .album img:hover {
+  opacity: 1;
+}
+
+.focus p {
+  margin: 1rem;
+  color: var(--clear);
+  font-size: 1rem;
+}
+
+.focus .container {
+  width: 57rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.tag {
+  justify-content: flex-end;
+}
+
+.link {
+  justify-content: flex-start;
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+}
+
+.focus .container p {
+  opacity: 0.3;
+  color: var(--clear);
+  margin-left: 1rem;
+}
+
+.focus .container a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 400;
+  margin-right: 1rem;
+  transition: 0.2s;
+}
+
+.focus .container a:hover {
+  opacity: 0.3;
 }
 
 .valid {
