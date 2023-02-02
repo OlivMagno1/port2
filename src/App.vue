@@ -67,11 +67,11 @@ export default {
 }
 
 :root {
-  --primary: #151c0d;
-  --primary-light: #1f2a13;
-  --secondary: #0a0e06;
-  --clear: #fefae0;
-  --accent: #dda15e;
+  --primary: #0c0f1d;
+  --primary-light: #161b33;
+  --secondary: #06070e;
+  --clear: #f1dac4;
+  --accent: #a69cac;
 }
 
 * {
