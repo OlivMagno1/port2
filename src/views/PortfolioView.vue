@@ -109,7 +109,7 @@ export default {
         github: "placeholder",
         folder: "portfolio",
         snapshot: "portfolio1",
-        image: ["portfolio1"],
+        image: ["portfolio1", "portfolio2"],
         tags: ["Vue.js", "Javascript"],
         sinopsis: "Website de um portfolio",
         description:
