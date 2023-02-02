@@ -346,7 +346,7 @@ export default {
   align-items: center;
   justify-content: center;
   position: absolute;
-  left: 36.4rem;
+  left: 35.4rem;
   top: 13.1rem;
   background-color: var(--secondary);
 
