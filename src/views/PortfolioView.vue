@@ -24,21 +24,30 @@
       </div>
       <div
         class="card"
-        v-for="(slide, index) in portfolioData"
+        v-for="(slide, index) in portfolioData.slice(
+          projectPage,
+          projectPage + 7
+        )"
         :key="index"
-        :class="{ chosen: checkActual(index) }"
-        @click="selectedProject = index"
+        :class="{ chosen: checkActual(index + projectPage) }"
+        @click="selectedProject = index + projectPage"
       >
         <img
-          v-if="!checkActual(index)"
           :src="
-            require(`@/assets/images/${portfolioData[index].folder}/${slide.snapshot}.jpg`)
+            require(`@/assets/images/${
+              portfolioData[index + projectPage].folder
+            }/thumb.jpg`)
           "
         />
-        <div v-if="!checkActual(index)" class="card_details">
+        <div class="card_details">
           <h2>{{ slide.projectTitle }}</h2>
-          <h3>{{ slide.sinopsis }}</h3>
+          <p>{{ slide.sinopsis }}</p>
         </div>
+      </div>
+      <div class="deck-navigation">
+        <div class="navigation-button" @click="prevPage">minus</div>
+        <p>{{ projectPage / 7 + 1 }}</p>
+        <div class="navigation-button" @click="nextPage">plus</div>
       </div>
     </div>
     <div class="focus" :class="{ valid: checkValid() }">
@@ -82,6 +91,7 @@ export default {
   name: "PortfolioView",
   setup() {
     const selectedProject = ref(-1);
+    const projectPage = ref(0);
 
     const checkActual = (index) => {
       if (selectedProject.value === index) return true;
@@ -93,13 +103,22 @@ export default {
       else return false;
     };
 
+    const nextPage = () => {
+      projectPage.value = projectPage.value + 7;
+      return;
+    };
+
+    const prevPage = () => {
+      if (projectPage.value >= 7) projectPage.value = projectPage.value - 7;
+      return;
+    };
+
     const portfolioData = [
       {
         projectTitle: "Aplicativo",
         address: "https://admirable-baklava-67109e.netlify.app/",
         github: "https://github.com/OlivMagno1/loginsystem",
         folder: "aplicativo",
-        snapshot: "placeholder1",
         image: ["placeholder1"],
         tags: ["Vue.js", "Javascript", "Stytch", "Funções Serverless"],
         sinopsis: "Sistema de Cadastro e Login com base em e-mail e senha",
@@ -111,7 +130,6 @@ export default {
         address: "placeholder",
         github: "placeholder",
         folder: "portfolio",
-        snapshot: "portfolio1",
         image: ["portfolio1", "portfolio2"],
         tags: ["Vue.js", "Javascript"],
         sinopsis: "Website de um portfolio",
@@ -123,7 +141,6 @@ export default {
         address: "https://elaborate-granita-5568c7.netlify.app",
         github: "https://github.com/OlivMagno1/arquimovelaria",
         folder: "movelaria",
-        snapshot: "movelaria1",
         image: ["movelaria1"],
         tags: ["Vue.js", "Javascript"],
         sinopsis:
@@ -136,9 +153,8 @@ export default {
         address: "https://tranquil-clafoutis-236e51.netlify.app",
         github: "https://github.com/OlivMagno1/cafe",
         folder: "cafe",
-        snapshot: "cafe1",
         image: ["cafe1", "cafe2", "cafe3"],
-        tags: ["Vue.js"],
+        tags: ["Vue.js", "Responsivo"],
         sinopsis: "Exercício de cópia de interface por observação",
         description:
           "Exercício de cópia da interface visual do Lobe apenas por observação",
@@ -148,23 +164,101 @@ export default {
         address: "https://clinquant-malasada-132d92.netlify.app",
         github: "https://github.com/OlivMagno1/plataforma",
         folder: "plataforma",
-        snapshot: "plataforma1",
         image: ["plataforma1", "plataforma2", "plataforma3"],
-        tags: ["Vue.js"],
+        tags: ["Vue.js", "Responsivo"],
         sinopsis: "Exercício de cópia de interface por observação",
         description:
           "Exercício de cópia da interface visual do Ableton apenas por observação",
       },
+      {
+        projectTitle: "placeholder1",
+        address: "placeholder",
+        github: "placeholder",
+        folder: "aplicativo",
+        image: ["placeholder1"],
+        tags: ["placeholder"],
+        sinopsis: "placeholder",
+        description: "placeholder",
+      },
+      {
+        projectTitle: "placeholder2",
+        address: "placeholder",
+        github: "placeholder",
+        folder: "aplicativo",
+        image: ["placeholder1"],
+        tags: ["placeholder"],
+        sinopsis: "placeholder",
+        description: "placeholder",
+      },
+      {
+        projectTitle: "placeholder3",
+        address: "placeholder",
+        github: "placeholder",
+        folder: "aplicativo",
+        image: ["placeholder1"],
+        tags: ["placeholder"],
+        sinopsis: "placeholder",
+        description: "placeholder",
+      },
+      {
+        projectTitle: "placeholder4",
+        address: "placeholder",
+        github: "placeholder",
+        folder: "aplicativo",
+        image: ["placeholder1"],
+        tags: ["placeholder"],
+        sinopsis: "placeholder",
+        description: "placeholder",
+      },
+      {
+        projectTitle: "placeholder5",
+        address: "placeholder",
+        github: "placeholder",
+        folder: "aplicativo",
+        image: ["placeholder1"],
+        tags: ["placeholder"],
+        sinopsis: "placeholder",
+        description: "placeholder",
+      },
+      {
+        projectTitle: "placeholder6",
+        address: "placeholder",
+        github: "placeholder",
+        folder: "aplicativo",
+        image: ["placeholder1"],
+        tags: ["placeholder"],
+        sinopsis: "placeholder",
+        description: "placeholder",
+      },
+      {
+        projectTitle: "placeholder7",
+        address: "placeholder",
+        github: "placeholder",
+        folder: "aplicativo",
+        image: ["placeholder1"],
+        tags: ["placeholder"],
+        sinopsis: "placeholder",
+        description: "placeholder",
+      },
     ];
-    return { portfolioData, selectedProject, checkActual, checkValid };
+    return {
+      portfolioData,
+      selectedProject,
+      projectPage,
+      checkActual,
+      checkValid,
+      nextPage,
+      prevPage,
+    };
   },
 };
 </script>
 
 <style scoped>
 .deck {
+  position: relative;
   background-color: var(--secondary);
-  height: 41rem;
+  max-height: 41rem;
   margin: 13rem 0 0 5rem;
   display: flex;
   flex-flow: column nowrap;
@@ -180,7 +274,7 @@ export default {
   position: relative;
 
   width: 30rem;
-  height: 8rem;
+  height: 5rem;
   margin: 0.1rem;
 
   transition: 0.2s;
@@ -192,8 +286,7 @@ export default {
 }
 
 .chosen {
-  background-color: var(--primary);
-  height: 3rem;
+  opacity: 0.3;
 }
 
 .close {
@@ -207,7 +300,7 @@ export default {
 .card img {
   object-fit: contain;
   opacity: 0.7;
-  height: 8rem;
+  height: 5rem;
   max-width: 100%;
 }
 
@@ -218,7 +311,33 @@ export default {
   justify-content: space-evenly;
   text-align: justify;
   margin: 0 1rem;
-  font-size: 1rem;
+}
+
+.card_details p {
+  font-size: 0.8rem;
+}
+
+.deck-navigation {
+  position: absolute;
+  bottom: 0;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 3.6rem;
+  width: 30rem;
+  margin: 0.1rem;
+}
+
+.navigation-button {
+  cursor: pointer;
+  transition: 0.2s;
+  padding: 2rem;
+}
+
+.navigation-button:hover {
+  background-color: var(--primary-light);
 }
 
 .focus {
@@ -227,12 +346,12 @@ export default {
   align-items: center;
   justify-content: center;
   position: absolute;
-  left: 35.4rem;
+  left: 36.4rem;
   top: 13.1rem;
   background-color: var(--secondary);
 
   width: 59rem;
-  height: 35.8rem;
+  height: 41rem;
 }
 
 .focus h2 {
