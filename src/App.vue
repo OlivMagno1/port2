@@ -1,16 +1,10 @@
 <template>
   <router-view />
-  <FooterBar />
 </template>
 
 <script>
-import FooterBar from "./components/FooterBar.vue";
-
 export default {
   name: "App",
-  components: {
-    FooterBar,
-  },
 };
 </script>
 
@@ -89,7 +83,7 @@ export default {
 }
 
 .background {
-  height: 56.2rem;
+  height: 58.7rem;
   display: flex;
   flex-flow: row nowrap;
 }
@@ -104,10 +98,24 @@ export default {
   align-items: flex-end;
 }
 
+.stack {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+}
+
 .header h1 {
   font-size: 5rem;
   font-family: "Unbounded";
-  font-variation-settings: "wght" 100;
+  font-variation-settings: "wght" 200;
+  margin: -1rem 0 0 -0.3rem;
+}
+
+.name {
+  color: var(--clear);
+  font-size: 1.4rem;
+  font-family: "Unbounded";
+  font-variation-settings: "wght" 200;
 }
 
 .header p {
@@ -119,28 +127,46 @@ export default {
   color: var(--clear);
 }
 
-.subheader {
+.menu-header {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   position: absolute;
-  top: 8rem;
-  left: 3rem;
+  top: 9rem;
+  left: 5rem;
   height: 2rem;
   width: 23rem;
   z-index: 101;
 }
 
-.subheader a,
-.subheader a:visited {
+.menu-header a,
+.menu-header a:visited {
   color: var(--accent);
   text-decoration: none;
   font-weight: 400;
   font-size: 1.2rem;
   transition: 0.2s;
+  margin-right: 1rem;
 }
 
-.subheader a:hover {
+.menu-header a:hover {
   color: var(--clear);
+}
+
+.sub-header {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 400;
+  opacity: 0.5;
+  margin-bottom: 1rem;
+  color: var(--clear);
+
+  text-align: left;
+  position: absolute;
+  top: 11rem;
+  left: 5rem;
+  height: 2rem;
+  width: 50rem;
+  z-index: 101;
 }
 </style>

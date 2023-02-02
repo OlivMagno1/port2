@@ -1,13 +1,16 @@
 <template>
   <div class="background">
     <div class="header">
-      <h1>Projetos</h1>
+      <div class="stack">
+        <h2 class="name">Magno Oliveira</h2>
+        <h1>Projetos</h1>
+      </div>
       <p>
         Aqui estão todos os projetos que eu completo. Eles também podem ser
         acessados pelo github.
       </p>
     </div>
-    <div class="subheader">
+    <div class="menu-header">
       <router-link to="/">Home</router-link>
       <router-link to="/knowledge">Conhecimentos</router-link>
     </div>
