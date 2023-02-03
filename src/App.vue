@@ -109,6 +109,7 @@ export default {
   font-family: "Unbounded";
   font-variation-settings: "wght" 200;
   margin: -1rem 0 0 -0.3rem;
+  cursor: default;
 }
 
 .name {
@@ -116,6 +117,7 @@ export default {
   font-size: 1.4rem;
   font-family: "Unbounded";
   font-variation-settings: "wght" 200;
+  cursor: default;
 }
 
 .header p {
@@ -123,8 +125,9 @@ export default {
   font-style: italic;
   font-weight: 400;
   opacity: 0.5;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0.75rem;
   color: var(--clear);
+  cursor: default;
 }
 
 .menu-header {
