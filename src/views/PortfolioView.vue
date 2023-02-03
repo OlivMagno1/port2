@@ -30,7 +30,7 @@
         )"
         :key="index"
         :class="{ chosen: checkActual(index + projectPage) }"
-        @click="selectedProject = index + projectPage"
+        @click="changeProject(index)"
       >
         <img
           :src="
@@ -104,6 +104,14 @@ export default {
   setup() {
     const selectedProject = ref(-1);
     const projectPage = ref(0);
+
+    const changeProject = (index) => {
+      selectedProject.value = -1;
+      setTimeout(() => {
+        selectedProject.value = index + projectPage.value;
+      }, "1");
+      return;
+    };
 
     const checkActual = (index) => {
       if (selectedProject.value === index) return true;
@@ -193,81 +201,12 @@ export default {
         description:
           "Exercício de cópia da interface visual do Ableton apenas por observação",
       },
-      {
-        projectTitle: "placeholder1",
-        address: "placeholder",
-        github: "placeholder",
-        folder: "aplicativo",
-        image: ["placeholder1"],
-        tags: ["placeholder"],
-        sinopsis: "placeholder",
-        description: "placeholder",
-      },
-      {
-        projectTitle: "placeholder2",
-        address: "placeholder",
-        github: "placeholder",
-        folder: "aplicativo",
-        image: ["placeholder1"],
-        tags: ["placeholder"],
-        sinopsis: "placeholder",
-        description: "placeholder",
-      },
-      {
-        projectTitle: "placeholder3",
-        address: "placeholder",
-        github: "placeholder",
-        folder: "aplicativo",
-        image: ["placeholder1"],
-        tags: ["placeholder"],
-        sinopsis: "placeholder",
-        description: "placeholder",
-      },
-      {
-        projectTitle: "placeholder4",
-        address: "placeholder",
-        github: "placeholder",
-        folder: "aplicativo",
-        image: ["placeholder1"],
-        tags: ["placeholder"],
-        sinopsis: "placeholder",
-        description: "placeholder",
-      },
-      {
-        projectTitle: "placeholder5",
-        address: "placeholder",
-        github: "placeholder",
-        folder: "aplicativo",
-        image: ["placeholder1"],
-        tags: ["placeholder"],
-        sinopsis: "placeholder",
-        description: "placeholder",
-      },
-      {
-        projectTitle: "placeholder6",
-        address: "placeholder",
-        github: "placeholder",
-        folder: "aplicativo",
-        image: ["placeholder1"],
-        tags: ["placeholder"],
-        sinopsis: "placeholder",
-        description: "placeholder",
-      },
-      {
-        projectTitle: "placeholder7",
-        address: "placeholder",
-        github: "placeholder",
-        folder: "aplicativo",
-        image: ["placeholder1"],
-        tags: ["placeholder"],
-        sinopsis: "placeholder",
-        description: "placeholder",
-      },
     ];
     return {
       portfolioData,
       selectedProject,
       projectPage,
+      changeProject,
       checkActual,
       checkValid,
       nextPage,
@@ -317,8 +256,8 @@ export default {
 .close {
   z-index: 100;
   position: absolute;
-  left: 92.5rem;
-  top: 14rem;
+  top: 1rem;
+  right: -58rem;
   cursor: pointer;
 }
 
@@ -356,6 +295,7 @@ export default {
 }
 
 .deck-navigation p {
+  cursor: default;
   background-color: var(--primary-light);
   padding: 0.5rem 1.25rem;
   margin: 0 0.75rem;
@@ -400,7 +340,6 @@ export default {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: flex-start;
-  background-color: var(--primary);
   margin: 1rem 0 0 1rem;
   padding: 0.5rem;
   height: 15rem;
