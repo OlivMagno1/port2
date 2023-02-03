@@ -45,9 +45,21 @@
         </div>
       </div>
       <div class="deck-navigation">
-        <div class="navigation-button" @click="prevPage">minus</div>
+        <div
+          class="navigation-button"
+          :class="{ off: checkFirstPage() }"
+          @click="prevPage"
+        >
+          <font-awesome-icon icon="fa-solid fa-chevron-left" />
+        </div>
         <p>{{ projectPage / 7 + 1 }}</p>
-        <div class="navigation-button" @click="nextPage">plus</div>
+        <div
+          class="navigation-button"
+          :class="{ off: checkLastPage() }"
+          @click="nextPage"
+        >
+          <font-awesome-icon icon="fa-solid fa-chevron-right" />
+        </div>
       </div>
     </div>
     <div class="focus" :class="{ valid: checkValid() }">
@@ -103,13 +115,24 @@ export default {
       else return false;
     };
 
+    const checkFirstPage = () => {
+      if (projectPage.value === 0) return true;
+      else return false;
+    };
+
+    const checkLastPage = () => {
+      if (projectPage.value + 7 > portfolioData.length) return true;
+      else return false;
+    };
+
     const nextPage = () => {
-      projectPage.value = projectPage.value + 7;
+      if (projectPage.value + 7 < portfolioData.length)
+        projectPage.value = projectPage.value + 7;
       return;
     };
 
     const prevPage = () => {
-      if (projectPage.value >= 7) projectPage.value = projectPage.value - 7;
+      if (projectPage.value != 0) projectPage.value = projectPage.value - 7;
       return;
     };
 
@@ -249,6 +272,8 @@ export default {
       checkValid,
       nextPage,
       prevPage,
+      checkFirstPage,
+      checkLastPage,
     };
   },
 };
@@ -323,21 +348,32 @@ export default {
 
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 3.6rem;
   width: 30rem;
   margin: 0.1rem;
 }
 
+.deck-navigation p {
+  background-color: var(--primary-light);
+  padding: 0.5rem 1.25rem;
+  margin: 0 0.75rem;
+}
+
 .navigation-button {
   cursor: pointer;
   transition: 0.2s;
-  padding: 2rem;
+  padding: 0.5rem 1.25rem;
 }
 
 .navigation-button:hover {
   background-color: var(--primary-light);
+}
+
+.off {
+  cursor: default;
+  opacity: 0;
 }
 
 .focus {
@@ -444,7 +480,7 @@ export default {
   max-height: 100%;
 }
 
-h2 {
+h2:not(.name) {
   font-family: "Unbounded";
   font-size: 1.4rem;
   color: var(--accent);
