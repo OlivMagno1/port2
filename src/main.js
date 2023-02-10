@@ -8,12 +8,22 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
   faChevronRight,
   faChevronLeft,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import { faVuejs, faSquareJs } from "@fortawesome/free-brands-svg-icons";
+import {
+  faVuejs,
+  faSquareJs,
+  faHtml5,
+  faCss3Alt,
+} from "@fortawesome/free-brands-svg-icons";
+
 library.add(faChevronRight);
 library.add(faChevronLeft);
+library.add(faXmark);
 library.add(faVuejs);
 library.add(faSquareJs);
+library.add(faHtml5);
+library.add(faCss3Alt);
 
 createApp(App)
   .use(router)
