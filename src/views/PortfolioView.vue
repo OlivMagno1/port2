@@ -1,14 +1,8 @@
 <template>
   <div class="background">
     <div class="header">
-      <div class="stack">
-        <h2 class="name">Magno Oliveira</h2>
-        <h1>Projetos</h1>
-      </div>
-      <p>
-        Aqui estão todos os projetos que eu completo. Eles também podem ser
-        acessados pelo github.
-      </p>
+      <h2>Magno Oliveira</h2>
+      <h1>Projetos</h1>
     </div>
     <div class="menu-header">
       <router-link to="/">Home</router-link>
@@ -20,7 +14,7 @@
         v-show="selectedProject != -1"
         @click="selectedProject = -1"
       >
-        x
+        <font-awesome-icon icon="fa-solid fa-xmark" />
       </div>
       <div
         class="card"
@@ -257,7 +251,7 @@ export default {
   z-index: 100;
   position: absolute;
   top: 1rem;
-  right: -58rem;
+  left: 68.8rem;
   cursor: pointer;
 }
 
@@ -326,7 +320,7 @@ export default {
   top: 13.1rem;
   background-color: var(--secondary);
 
-  width: 59rem;
+  width: 39.8rem;
   height: 41rem;
 }
 
@@ -365,7 +359,7 @@ export default {
 }
 
 .focus .container {
-  width: 57rem;
+  width: 39.8rem;
   margin: 0.5rem;
   display: flex;
   flex-flow: row wrap;
@@ -419,7 +413,7 @@ export default {
   max-height: 100%;
 }
 
-h2:not(.name) {
+h2:not(.header h2) {
   font-family: "Unbounded";
   font-size: 1.4rem;
   color: var(--accent);

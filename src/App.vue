@@ -90,43 +90,36 @@ export default {
 
 .header {
   position: absolute;
-  top: 2.5rem;
-  left: 5rem;
+  top: clamp(0rem, -0.391rem + 1.7vw, 1rem);
+  left: clamp(2rem, 0.826rem + 5.2vw, 5rem);
   z-index: 100;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: flex-end;
-}
-
-.stack {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: flex-start;
 }
 
 .header h1 {
-  font-size: 5rem;
+  position: absolute;
+  top: 2rem;
+  font-size: clamp(2rem, 0.826rem + 5.2vw, 5rem);
   font-family: "Unbounded";
   font-variation-settings: "wght" 200;
-  margin: -1rem 0 0 -0.3rem;
+  /*margin-top: clamp(-1, -1.196rem + 0.9vw, -0.5rem);
+  margin-left: -0.3rem;
+  */
   cursor: default;
 }
 
-.name {
-  color: var(--clear);
-  font-size: 1.4rem;
+.header h2 {
+  position: absolute;
+  top: 1.4rem;
+  margin-left: clamp(0.15rem, 0.071rem + 0.3vw, 0.35rem);
+
+  width: 14rem;
+
   font-family: "Unbounded";
   font-variation-settings: "wght" 200;
-  cursor: default;
-}
-
-.header p {
-  font-size: 1rem;
-  font-style: italic;
-  font-weight: 400;
-  opacity: 0.5;
-  margin: 0 0 1rem 0.75rem;
+  font-size: clamp(0.8rem, 0.565rem + 1vw, 1.4rem);
+  text-align: left;
   color: var(--clear);
+
   cursor: default;
 }
 
@@ -134,11 +127,14 @@ export default {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
+
   position: absolute;
-  top: 9rem;
-  left: 5rem;
+  top: clamp(4.5rem, 2.739rem + 7.8vw, 9rem);
+  left: clamp(2rem, 0.826rem + 5.2vw, 5rem);
+
   height: 2rem;
   width: 23rem;
+  margin-left: clamp(0.15rem, 0.071rem + 0.3vw, 0.35rem);
   z-index: 101;
 }
 
@@ -147,7 +143,7 @@ export default {
   color: var(--accent);
   text-decoration: none;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 0.861rem + 0.2vw, 1rem);
   transition: 0.2s;
   margin-right: 1rem;
 }

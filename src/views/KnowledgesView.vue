@@ -1,11 +1,8 @@
 <template>
   <div class="background">
     <div class="header">
-      <div class="stack">
-        <h2 class="name">Magno Oliveira</h2>
-        <h1>Conhecimentos</h1>
-      </div>
-      <p>Aqui estão descritas todas as tecnologias que geralmente uso.</p>
+      <h2>Magno Oliveira</h2>
+      <h1>Conhecimentos</h1>
     </div>
     <div class="menu-header">
       <router-link to="/">Home</router-link>
@@ -28,7 +25,6 @@
             />
           </div>
         </div>
-        <p class="large-text">{{ skill.familiarity }}</p>
       </div>
     </div>
   </div>
@@ -40,53 +36,36 @@ export default {
   setup() {
     const skillData = [
       {
-        icon: "fa-brands fa-vuejs",
-        tech: "Vue.js",
+        icon: "fa-brands fa-html5",
+        tech: "HTML",
         description:
-          "Vue é um framework de front-end que facilita a produção de aplicações, unindo o melhor do html, css e javascript em uma única ferramenta poderosa",
-        levelName: "intermediário",
-        levelNum: 2,
-        familiarity:
-          "Consigo criar aplicações, integrar com back-end com facilidade",
+          "É a linguagem de marcarção mais comumente utilizada para a criação de páginas da web. É responsável por estabelecer toda a estrutura básica da informação contida na página",
+        levelName: "avançado",
+        levelNum: 3,
       },
       {
-        icon: "fa-brands fa-vuejs",
-        tech: "Vue.js",
+        icon: "fa-brands fa-css3-alt",
+        tech: "CSS",
         description:
-          "Vue é um framework de front-end que facilita a produção de aplicações, unindo o melhor do html, css e javascript em uma única ferramenta poderosa",
-        levelName: "intermediário",
-        levelNum: 2,
-        familiarity:
-          "Consigo criar aplicações, integrar com back-end com facilidade",
-      },
-      {
-        icon: "fa-brands fa-vuejs",
-        tech: "Vue.js",
-        description:
-          "Vue é um framework de front-end que facilita a produção de aplicações, unindo o melhor do html, css e javascript em uma única ferramenta poderosa",
-        levelName: "intermediário",
-        levelNum: 2,
-        familiarity:
-          "Consigo criar aplicações, integrar com back-end com facilidade",
-      },
-      {
-        icon: "fa-brands fa-vuejs",
-        tech: "Vue.js",
-        description:
-          "Vue é um framework de front-end que facilita a produção de aplicações, unindo o melhor do html, css e javascript em uma única ferramenta poderosa",
-        levelName: "intermediário",
-        levelNum: 2,
-        familiarity:
-          "Consigo criar aplicações, integrar com back-end com facilidade",
+          "Linguagem de estilização usada para descrever como a informação contida em uma página de HTML deve ser mostrada.",
+        levelName: "avançado",
+        levelNum: 3,
       },
       {
         icon: "fa-brands fa-square-js",
-        tech: "Javascript",
+        tech: "JavaScript",
         description:
-          "Javascript é uma poderosa ferramenta de programação que permite uma flexibilidade de desenvolvimento",
+          "Linguagem de programação interpretada e estruturada, baseada em objetos. É uma linguagem de script designada para utilização em páginas da web.",
         levelName: "intermediário",
         levelNum: 2,
-        familiarity: "Intermediário",
+      },
+      {
+        icon: "fa-brands fa-vuejs",
+        tech: "Vue.js",
+        description:
+          "Vue é um framework em Javascript para construção de interfaces de usuário e aplicações de página única. Unifica a utilização de HTML, CSS e Javascript de forma intuitiva e flexível.",
+        levelName: "intermediário",
+        levelNum: 2,
       },
     ];
 
@@ -144,7 +123,7 @@ export default {
   justify-content: center;
 
   height: 4rem;
-  width: 30.45rem;
+  width: 40.45rem;
   margin: 0 1rem 0 1rem;
 }
 
