@@ -253,6 +253,11 @@ export default {
   top: 1rem;
   left: 68.8rem;
   cursor: pointer;
+  transition: 0.2s;
+}
+
+.close:hover {
+  transform: scale(1.5);
 }
 
 .card img {
