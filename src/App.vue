@@ -84,8 +84,16 @@ export default {
 
 .background {
   height: 58.7rem;
+
   display: flex;
   flex-flow: row nowrap;
+  background-image: linear-gradient(
+      to right,
+      rgba(6, 7, 14, 1) 60%,
+      rgba(6, 7, 14, 0.8)
+    ),
+    url("./assets/images/bg.jpg");
+  background-size: cover;
 }
 
 .header {

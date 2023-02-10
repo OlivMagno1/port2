@@ -322,8 +322,7 @@ export default {
   justify-content: center;
   position: absolute;
   left: 35.4rem;
-  top: 13.1rem;
-  background-color: var(--secondary);
+  top: 13rem;
 
   width: 39.8rem;
   height: 41rem;
@@ -408,7 +407,8 @@ export default {
 }
 
 #placeholder-title {
-  color: var(--primary-light);
+  color: var(--accent);
+  cursor: default;
 }
 
 .focus img {
