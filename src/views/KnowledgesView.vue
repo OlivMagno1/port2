@@ -1,5 +1,5 @@
 <template>
-  <div class="background">
+  <div class="background2">
     <div class="header">
       <h2>Magno Oliveira</h2>
       <h1>Conhecimentos</h1>

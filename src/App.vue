@@ -96,6 +96,20 @@ export default {
   background-size: cover;
 }
 
+.background2 {
+  height: 58.7rem;
+
+  display: flex;
+  flex-flow: row nowrap;
+  background-image: linear-gradient(
+      to right,
+      rgba(6, 7, 14, 1) 60%,
+      rgba(6, 7, 14, 0.8)
+    ),
+    url("./assets/images/bg2.jpg");
+  background-size: cover;
+}
+
 .header {
   position: absolute;
   top: clamp(0rem, -0.391rem + 1.7vw, 1rem);
