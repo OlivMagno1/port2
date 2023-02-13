@@ -239,7 +239,7 @@ export default {
   .deck {
     position: relative;
     background-color: var(--secondary);
-    max-height: clamp(28.125rem, 14.13rem + 22.4vw, 41rem);
+    height: clamp(27rem, 11.783rem + 24.3vw, 41rem);
     top: clamp(6rem, -1.609rem + 12.2vw, 13rem);
     left: clamp(1rem, -3.348rem + 7vw, 5rem);
     display: flex;
@@ -275,7 +275,7 @@ export default {
     z-index: 100;
     position: absolute;
     top: clamp(0.5rem, 1.25vw, 1rem);
-    left: clamp(49.5rem, 28.848rem + 33vw, 68.5rem); /*not happy with this */
+    left: clamp(57.5rem, 46.63rem + 17.4vw, 67.5rem);
     cursor: pointer;
     transition: 0.2s;
   }
@@ -349,8 +349,8 @@ export default {
     align-items: center;
     justify-content: center;
 
-    width: clamp(19.9rem, 49.75vw, 39.8rem);
-    height: clamp(28.125rem, 14.13rem + 22.4vw, 41rem);
+    width: 39rem;
+    height: clamp(27rem, 11.783rem + 24.3vw, 41rem);
     margin: clamp(0.05rem, 0.125vw, 0.1rem);
   }
 
@@ -366,7 +366,7 @@ export default {
     justify-content: flex-start;
     margin: 1rem 0 0 1rem;
     padding: 0.5rem;
-    height: 15rem;
+    height: clamp(10rem, 4.565rem + 8.7vw, 15rem);
   }
 
   .focus .album img {
