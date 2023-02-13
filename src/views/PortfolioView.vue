@@ -123,7 +123,7 @@ export default {
     };
 
     const checkLastPage = () => {
-      if (projectPage.value + 7 > portfolioData.length) return true;
+      if (projectPage.value + 8 > portfolioData.length) return true;
       else return false;
     };
 
@@ -139,6 +139,28 @@ export default {
     };
 
     const portfolioData = [
+      {
+        projectTitle: "Aplicativo",
+        address: "https://admirable-baklava-67109e.netlify.app/",
+        github: "https://github.com/OlivMagno1/loginsystem",
+        folder: "aplicativo",
+        image: ["placeholder1"],
+        tags: ["Vue.js", "Javascript", "Stytch", "Funções Serverless"],
+        sinopsis: "Sistema de Cadastro e Login com base em e-mail e senha",
+        description:
+          "Website desenvolvido em Vue3, apresentando uma interface simples para um usuário fazer login. Caso o usuário não possua uma conta registrada, pode se cadastrar pelo mesmo sistema. A interação é feita utilizando e-mail e senha. A aplicação foi desenvolvida em Vue3. A verificação de login ou cadastro é realizada pelo Stytch, implementado no sistema por meio de funções serverless do Netlify.",
+      },
+      {
+        projectTitle: "Aplicativo",
+        address: "https://admirable-baklava-67109e.netlify.app/",
+        github: "https://github.com/OlivMagno1/loginsystem",
+        folder: "aplicativo",
+        image: ["placeholder1"],
+        tags: ["Vue.js", "Javascript", "Stytch", "Funções Serverless"],
+        sinopsis: "Sistema de Cadastro e Login com base em e-mail e senha",
+        description:
+          "Website desenvolvido em Vue3, apresentando uma interface simples para um usuário fazer login. Caso o usuário não possua uma conta registrada, pode se cadastrar pelo mesmo sistema. A interação é feita utilizando e-mail e senha. A aplicação foi desenvolvida em Vue3. A verificação de login ou cadastro é realizada pelo Stytch, implementado no sistema por meio de funções serverless do Netlify.",
+      },
       {
         projectTitle: "Aplicativo",
         address: "https://admirable-baklava-67109e.netlify.app/",
@@ -213,219 +235,224 @@ export default {
 </script>
 
 <style scoped>
-.deck {
-  position: relative;
-  background-color: var(--secondary);
-  max-height: 41rem;
-  margin: 13rem 0 0 5rem;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
+@media screen and (min-width: 1000px) {
+  .deck {
+    position: relative;
+    background-color: var(--secondary);
+    max-height: clamp(28.125rem, 14.13rem + 22.4vw, 41rem);
+    top: clamp(6rem, -1.609rem + 12.2vw, 13rem);
+    left: clamp(1rem, -3.348rem + 7vw, 5rem);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
 
-.card {
-  display: flex;
-  flex-flow: row nowrap;
-  background-color: var(--primary-light);
-  color: var(--clear);
-  position: relative;
+  .card {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: var(--primary-light);
+    color: var(--clear);
+    position: relative;
 
-  width: 30rem;
-  height: 5rem;
-  margin: 0.1rem;
+    width: clamp(20rem, 9.13rem + 17.4vw, 30rem);
+    height: clamp(3.2rem, 1.243rem + 3.1vw, 5rem);
+    margin: clamp(0.05rem, 0.125vw, 0.1rem);
 
-  transition: 0.2s;
-  cursor: pointer;
-}
+    transition: 0.2s;
+    cursor: pointer;
+  }
 
-.card:hover:not(chosen) {
-  background-color: var(--primary);
-}
+  .card:hover:not(chosen) {
+    background-color: var(--primary);
+  }
 
-.chosen {
-  opacity: 0.3;
-}
+  .chosen {
+    opacity: 0.3;
+  }
 
-.close {
-  z-index: 100;
-  position: absolute;
-  top: 1rem;
-  left: 68.8rem;
-  cursor: pointer;
-  transition: 0.2s;
-}
+  .close {
+    z-index: 100;
+    position: absolute;
+    top: clamp(0.5rem, 1.25vw, 1rem);
+    left: clamp(49.5rem, 28.848rem + 33vw, 68.5rem); /*not happy with this */
+    cursor: pointer;
+    transition: 0.2s;
+  }
 
-.close:hover {
-  transform: scale(1.5);
-}
+  .close:hover {
+    transform: scale(1.5);
+  }
 
-.card img {
-  object-fit: contain;
-  opacity: 0.7;
-  height: 5rem;
-  max-width: 100%;
-}
+  .card img {
+    object-fit: contain;
+    opacity: 0.7;
+    height: clamp(3.2rem, 1.243rem + 3.1vw, 5rem);
+    max-width: 100%;
+  }
 
-.card_details {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: flex-start;
-  justify-content: space-evenly;
-  text-align: justify;
-  margin: 0 1rem;
-}
+  .card_details {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    text-align: justify;
+    margin: 0 1rem;
+  }
 
-.card_details p {
-  font-size: 0.8rem;
-}
+  .card_details p {
+    font-size: clamp(0.6rem, 0.4rem + 0.5vw, 0.8rem);
+  }
 
-.deck-navigation {
-  position: absolute;
-  bottom: 0;
+  .deck-navigation {
+    position: absolute;
+    bottom: 0;
 
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  height: 3.6rem;
-  width: 30rem;
-  margin: 0.1rem;
-}
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    height: clamp(3.2rem, 1.243rem + 3.1vw, 5rem);
+    width: clamp(20rem, 9.13rem + 17.4vw, 30rem);
+    margin: 0.1rem;
+  }
 
-.deck-navigation p {
-  cursor: default;
-  background-color: var(--primary-light);
-  padding: 0.5rem 1.25rem;
-  margin: 0 0.75rem;
-}
+  .deck-navigation p {
+    cursor: default;
+    background-color: var(--primary-light);
+    padding: 0.5rem 1.25rem;
+    margin: 0 0.75rem;
+  }
 
-.navigation-button {
-  cursor: pointer;
-  transition: 0.2s;
-  padding: 0.5rem 1.25rem;
-}
+  .navigation-button {
+    cursor: pointer;
+    transition: 0.2s;
+    padding: 0.5rem 1.25rem;
+  }
 
-.navigation-button:hover {
-  background-color: var(--primary-light);
-}
+  .navigation-button:hover {
+    background-color: var(--primary-light);
+  }
 
-.off {
-  cursor: default;
-  opacity: 0;
-}
+  .off {
+    cursor: default;
+    opacity: 0;
+  }
 
-.focus {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  left: 35.4rem;
-  top: 13rem;
+  .focus {
+    position: absolute;
+    left: clamp(21.2rem, 5.44rem + 25.2vw, 35.7rem);
+    top: clamp(6rem, -1.609rem + 12.2vw, 13rem);
 
-  width: 39.8rem;
-  height: 41rem;
-}
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
 
-.focus h2 {
-  font-size: 3rem;
-  margin: 1rem 0 0 1rem;
-}
+    width: clamp(19.9rem, 49.75vw, 39.8rem);
+    height: clamp(28.125rem, 14.13rem + 22.4vw, 41rem);
+    margin: clamp(0.05rem, 0.125vw, 0.1rem);
+  }
 
-.focus .album {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: flex-start;
-  margin: 1rem 0 0 1rem;
-  padding: 0.5rem;
-  height: 15rem;
-}
+  .focus h2 {
+    font-size: 3rem;
+    margin: 1rem 0 0 1rem;
+  }
 
-.focus .album img {
-  margin: 0.5rem;
-  height: 15rem;
-  width: auto;
-  opacity: 0.6;
-  cursor: pointer;
-  transition: 0.2s;
-}
+  .focus .album {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 1rem 0 0 1rem;
+    padding: 0.5rem;
+    height: 15rem;
+  }
 
-.focus .album img:hover {
-  opacity: 1;
-}
+  .focus .album img {
+    margin: 0.5rem;
+    height: 15rem;
+    width: auto;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: 0.2s;
+  }
 
-.focus p {
-  margin: 1rem;
-  color: var(--clear);
-  font-size: 1rem;
-}
+  .focus .album img:hover {
+    opacity: 1;
+  }
 
-.focus .container {
-  width: 39.8rem;
-  margin: 0.5rem;
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-}
+  .focus p {
+    margin: 1rem;
+    color: var(--clear);
+    font-size: 1rem;
+  }
 
-.tag {
-  justify-content: flex-end;
-}
+  .focus .container {
+    width: 39.8rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
 
-.link {
-  justify-content: flex-start;
-  position: absolute;
-  bottom: 0.5rem;
-  left: 0.5rem;
-}
+  .tag {
+    justify-content: flex-end;
+  }
 
-.focus .container p {
-  opacity: 0.3;
-  color: var(--clear);
-  margin-left: 1rem;
-}
+  .link {
+    justify-content: flex-start;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+  }
 
-.focus .container a {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 400;
-  margin-right: 1rem;
-  transition: 0.2s;
-}
+  .focus .container p {
+    opacity: 0.3;
+    color: var(--clear);
+    margin-left: 1rem;
+  }
 
-.focus .container a:hover {
-  opacity: 0.3;
-}
+  .focus .container a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 400;
+    margin-right: 1rem;
+    transition: 0.2s;
+  }
 
-.valid {
-  text-align: justify;
-  align-items: flex-start;
-  justify-content: flex-start;
-  background-color: var(--primary);
-}
+  .focus .container a:hover {
+    opacity: 0.3;
+  }
 
-#placeholder-title {
-  color: var(--accent);
-  cursor: default;
-}
+  .valid {
+    text-align: justify;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: var(--primary);
+  }
 
-.focus img {
-  object-fit: contain;
-  opacity: 0.7;
-  width: 5rem;
-  max-height: 100%;
-}
+  #placeholder-title {
+    color: var(--accent);
+    cursor: default;
+  }
 
-h2:not(.header h2) {
-  font-family: "Unbounded";
-  font-size: 1.4rem;
-  color: var(--accent);
-}
+  .focus img {
+    object-fit: contain;
+    opacity: 0.7;
+    width: 5rem;
+    max-height: 100%;
+  }
 
-h3 {
-  font-weight: 400;
-  font-size: 0.9rem;
+  h2:not(.header h2) {
+    font-family: "Unbounded";
+    font-size: clamp(1rem, 0.2rem + 2vw, 1.8rem);
+    color: var(--accent);
+  }
+
+  h3 {
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
 }
 </style>

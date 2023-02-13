@@ -9,6 +9,65 @@ export default {
 </script>
 
 <style>
+@media screen and (min-width: 1000px) {
+  .header {
+    position: absolute;
+    top: 0;
+    left: clamp(1rem, -3.348rem + 7vw, 5rem);
+    z-index: 100;
+  }
+
+  .header h1 {
+    position: absolute;
+    top: clamp(1.5rem, -0.13rem + 2.6vw, 3rem);
+    font-size: clamp(2rem, -1.261rem + 5.2vw, 5rem);
+    font-family: "Unbounded";
+    font-variation-settings: "wght" 200;
+    cursor: default;
+  }
+
+  .header h2 {
+    position: absolute;
+    top: clamp(1rem, -0.63rem + 2.6vw, 2.5rem);
+    margin-left: clamp(0.15rem, 0.071rem + 0.3vw, 0.35rem);
+
+    width: 14rem;
+
+    font-family: "Unbounded";
+    font-variation-settings: "wght" 200;
+    font-size: clamp(0.8rem, 0.148rem + 1vw, 1.4rem);
+    text-align: left;
+    color: var(--clear);
+
+    cursor: default;
+  }
+
+  .menu-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+
+    position: absolute;
+    top: clamp(3.8rem, -1.852rem + 9vw, 9rem);
+    left: clamp(0.9rem, -3.557rem + 7.1vw, 5rem);
+
+    height: 2rem;
+    width: 23rem;
+    margin-left: clamp(0.15rem, 0.071rem + 0.3vw, 0.35rem);
+    z-index: 101;
+  }
+
+  .menu-header a,
+  .menu-header a:visited {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: clamp(0.7rem, 0.374rem + 0.5vw, 1rem);
+    transition: 0.2s;
+    margin-right: 1rem;
+  }
+}
+
 @font-face {
   font-family: "Montserrat";
   src: url("assets/fonts/Montserrat-Thin.ttf");
@@ -108,66 +167,6 @@ export default {
     ),
     url("./assets/images/bg2.jpg");
   background-size: cover;
-}
-
-.header {
-  position: absolute;
-  top: clamp(0rem, -0.391rem + 1.7vw, 1rem);
-  left: clamp(2rem, 0.826rem + 5.2vw, 5rem);
-  z-index: 100;
-}
-
-.header h1 {
-  position: absolute;
-  top: 2rem;
-  font-size: clamp(2rem, 0.826rem + 5.2vw, 5rem);
-  font-family: "Unbounded";
-  font-variation-settings: "wght" 200;
-  /*margin-top: clamp(-1, -1.196rem + 0.9vw, -0.5rem);
-  margin-left: -0.3rem;
-  */
-  cursor: default;
-}
-
-.header h2 {
-  position: absolute;
-  top: 1.4rem;
-  margin-left: clamp(0.15rem, 0.071rem + 0.3vw, 0.35rem);
-
-  width: 14rem;
-
-  font-family: "Unbounded";
-  font-variation-settings: "wght" 200;
-  font-size: clamp(0.8rem, 0.565rem + 1vw, 1.4rem);
-  text-align: left;
-  color: var(--clear);
-
-  cursor: default;
-}
-
-.menu-header {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-
-  position: absolute;
-  top: clamp(4.5rem, 2.739rem + 7.8vw, 9rem);
-  left: clamp(2rem, 0.826rem + 5.2vw, 5rem);
-
-  height: 2rem;
-  width: 23rem;
-  margin-left: clamp(0.15rem, 0.071rem + 0.3vw, 0.35rem);
-  z-index: 101;
-}
-
-.menu-header a,
-.menu-header a:visited {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 400;
-  font-size: clamp(0.9rem, 0.861rem + 0.2vw, 1rem);
-  transition: 0.2s;
-  margin-right: 1rem;
 }
 
 .menu-header a:hover {
