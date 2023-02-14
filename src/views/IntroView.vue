@@ -2,7 +2,7 @@
   <div class="background">
     <div class="header">
       <h2>Front-end dev</h2>
-      <h1>Magno Oliveira</h1>
+      <h1>OlivMagno</h1>
     </div>
     <div class="menu-header">
       <router-link to="/knowledge">Conhecimentos</router-link>

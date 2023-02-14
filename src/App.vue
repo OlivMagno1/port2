@@ -142,8 +142,7 @@ export default {
 }
 
 .background {
-  height: 58.7rem;
-
+  height: 100vh;
   display: flex;
   flex-flow: row nowrap;
   background-image: linear-gradient(
@@ -156,8 +155,7 @@ export default {
 }
 
 .background2 {
-  height: 58.7rem;
-
+  height: 100vh;
   display: flex;
   flex-flow: row nowrap;
   background-image: linear-gradient(
