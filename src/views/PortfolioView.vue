@@ -148,7 +148,7 @@ export default {
         tags: ["Vue.js", "Javascript", "Stytch", "Funções Serverless"],
         sinopsis: "Sistema de Cadastro e Login com base em e-mail e senha",
         description:
-          "Website desenvolvido em Vue3, apresentando uma interface simples para um usuário fazer login. Caso o usuário não possua uma conta registrada, pode se cadastrar pelo mesmo sistema. A interação é feita utilizando e-mail e senha. A aplicação foi desenvolvida em Vue3. A verificação de login ou cadastro é realizada pelo Stytch, implementado no sistema por meio de funções serverless do Netlify.",
+          "API simples para um sistema de cadastro/login. Usuários novos devem fazer o cadastro antes de utilizar o sistema. A interação é feita utilizando e-mail e senha. A aplicação foi desenvolvida em Vue3. A verificação de login ou cadastro é realizada pelo Stytch, implementado no sistema por meio de funções serverless do Netlify.",
       },
       {
         projectTitle: "Portfolio",
@@ -168,10 +168,9 @@ export default {
         folder: "movelaria",
         image: ["movelaria1"],
         tags: ["Vue.js", "Javascript"],
-        sinopsis:
-          "Website de apresentação para uma empresa de móveis planejados",
+        sinopsis: "Página em brochura para uma empresa de móveis planejados",
         description:
-          "Design e implementação de uma página web para uma empresa de móveis planejados",
+          "Design minimalista de uma página de apresentação em brochura para uma empresa de móveis planejados. Apresenta além da introdução, os trabalhos já concluídos da empresa e as informações de contato. A página é responsiva, portanto funciona bem para usuários em desktop e mobile.",
       },
       {
         projectTitle: "Café",
@@ -182,7 +181,7 @@ export default {
         tags: ["Vue.js", "Responsivo"],
         sinopsis: "Exercício de cópia de interface por observação",
         description:
-          "Exercício de cópia da interface visual do Lobe apenas por observação",
+          "Exercício de Reprodução da interface do website do Lobe (https://www.lobe.ai) apenas por observação. O foco deste exercício é apresentar a maior semelhança possível entre o design original e a reprodução, inclusive no comportamento responsivo da página",
       },
       {
         projectTitle: "Plataforma",
@@ -193,7 +192,7 @@ export default {
         tags: ["Vue.js", "Responsivo"],
         sinopsis: "Exercício de cópia de interface por observação",
         description:
-          "Exercício de cópia da interface visual do Ableton apenas por observação",
+          "Exercício de Reprodução da interface do website do Ableton (https://www.ableton.com/en/about/) apenas por observação. O foco deste exercício é apresentar a maior semelhança possível entre o design original e a reprodução, inclusive no comportamento responsivo da página",
       },
     ];
     return {
