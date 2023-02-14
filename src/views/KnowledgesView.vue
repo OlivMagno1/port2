@@ -10,7 +10,7 @@
     </div>
     <div class="skill-list">
       <div class="skill-item" v-for="(skill, index) in skillData" :key="index">
-        <font-awesome-icon :icon="skill.icon" class="fa-3x small-text" />
+        <font-awesome-icon :icon="skill.icon" class="small-text" />
         <h2>{{ skill.tech }}</h2>
         <p class="large-text">{{ skill.description }}</p>
         <div class="level-container">
@@ -79,101 +79,108 @@ export default {
 </script>
 
 <style scoped>
-.skill-list {
-  width: 89.4rem;
-  height: 35.8rem;
-  margin: 13rem 0 0 5rem;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
+@media screen and (min-width: 1000px) {
+  .skill-list {
+    width: clamp(59.4rem, 26.791rem + 52.2vw, 89.4rem);
+    position: relative;
+    height: clamp(27rem, 11.783rem + 24.3vw, 41rem);
+    top: clamp(6rem, -1.609rem + 12.2vw, 13rem);
+    left: clamp(1rem, -3.348rem + 7vw, 5rem);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
 
-.skill-list .skill-item {
-  margin: 0 0 1rem 0;
-  text-align: justify;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: flex-end;
-  justify-content: flex-end;
-  transition: 0.2s;
-}
+  .skill-list .skill-item {
+    margin: 0 0 1rem 0;
+    text-align: justify;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+    justify-content: flex-end;
+    transition: 0.2s;
+  }
 
-.skill-item:hover {
-  transform: scale(1.01);
-  background-color: var(--primary);
-}
+  .skill-item:hover {
+    transform: scale(1.01);
+    background-color: var(--primary);
+  }
 
-.skill-item h2 {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: flex-start;
-  cursor: default;
+  .skill-item h2 {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: default;
 
-  height: 4rem;
-  width: 10rem;
-  margin: 0 1rem 0 0;
-}
+    height: clamp(2rem, -0.174rem + 34.8vw, 4rem);
+    width: clamp(7rem, 3.739rem + 5.2vw, 10rem);
+    margin: 0 1rem 0 0;
+    font-size: clamp(1rem, 0.457rem + 0.9vw, 1.5rem);
+  }
 
-.skill-item .large-text {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
+  .skill-item .large-text {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
 
-  height: 4rem;
-  width: 40.45rem;
-  margin: 0 1rem 0 1rem;
-}
+    height: clamp(2rem, -0.174rem + 34.8vw, 4rem);
+    width: clamp(26rem, 10.293rem + 25.1vw, 40.45rem);
+    margin: 0 1rem 0 1rem;
+    font-size: clamp(0.8rem, 0.583rem + 0.3vw, 1rem);
+  }
 
-.skill-item .small-text {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
+  .skill-item .small-text {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
 
-  height: 4rem;
-  width: 5.5rem;
-  margin: 0 1rem 0 0;
-}
+    height: clamp(2rem, -0.174rem + 34.8vw, 4rem);
+    width: clamp(3rem, 0.283rem + 4.3vw, 5.5rem);
+    margin: 0 1rem 0 0;
+  }
 
-.level-container {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  height: 4rem;
-  color: var(--accent);
-}
+  .level-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    height: clamp(2rem, -0.174rem + 34.8vw, 4rem);
+    color: var(--accent);
+  }
 
-.level-container p {
-  cursor: default;
-  transition: 0.6s;
-  opacity: 0;
-}
+  .level-container p {
+    font-size: clamp(0.8rem, 0.583rem + 0.3vw, 1rem);
+    cursor: default;
+    transition: 0.6s;
+    opacity: 0;
+  }
 
-.level-container:hover p {
-  opacity: 0.6;
-}
+  .level-container:hover p {
+    opacity: 0.6;
+  }
 
-.level-graph {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
-  width: 10rem;
-}
+  .level-graph {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    width: clamp(7rem, 3.739rem + 5.2vw, 10rem);
+  }
 
-span {
-  margin: 0.1rem;
+  span {
+    margin: 0.1rem;
 
-  width: 2rem;
-  height: 0.2rem;
-  background-color: var(--clear);
-}
+    width: 2rem;
+    height: 0.2rem;
+    background-color: var(--clear);
+  }
 
-.empty {
-  opacity: 0.4;
+  .empty {
+    opacity: 0.4;
+  }
 }
 </style>

@@ -151,28 +151,6 @@ export default {
           "Website desenvolvido em Vue3, apresentando uma interface simples para um usuário fazer login. Caso o usuário não possua uma conta registrada, pode se cadastrar pelo mesmo sistema. A interação é feita utilizando e-mail e senha. A aplicação foi desenvolvida em Vue3. A verificação de login ou cadastro é realizada pelo Stytch, implementado no sistema por meio de funções serverless do Netlify.",
       },
       {
-        projectTitle: "Aplicativo",
-        address: "https://admirable-baklava-67109e.netlify.app/",
-        github: "https://github.com/OlivMagno1/loginsystem",
-        folder: "aplicativo",
-        image: ["placeholder1"],
-        tags: ["Vue.js", "Javascript", "Stytch", "Funções Serverless"],
-        sinopsis: "Sistema de Cadastro e Login com base em e-mail e senha",
-        description:
-          "Website desenvolvido em Vue3, apresentando uma interface simples para um usuário fazer login. Caso o usuário não possua uma conta registrada, pode se cadastrar pelo mesmo sistema. A interação é feita utilizando e-mail e senha. A aplicação foi desenvolvida em Vue3. A verificação de login ou cadastro é realizada pelo Stytch, implementado no sistema por meio de funções serverless do Netlify.",
-      },
-      {
-        projectTitle: "Aplicativo",
-        address: "https://admirable-baklava-67109e.netlify.app/",
-        github: "https://github.com/OlivMagno1/loginsystem",
-        folder: "aplicativo",
-        image: ["placeholder1"],
-        tags: ["Vue.js", "Javascript", "Stytch", "Funções Serverless"],
-        sinopsis: "Sistema de Cadastro e Login com base em e-mail e senha",
-        description:
-          "Website desenvolvido em Vue3, apresentando uma interface simples para um usuário fazer login. Caso o usuário não possua uma conta registrada, pode se cadastrar pelo mesmo sistema. A interação é feita utilizando e-mail e senha. A aplicação foi desenvolvida em Vue3. A verificação de login ou cadastro é realizada pelo Stytch, implementado no sistema por meio de funções serverless do Netlify.",
-      },
-      {
         projectTitle: "Portfolio",
         address: "placeholder",
         github: "placeholder",
@@ -301,7 +279,7 @@ export default {
   }
 
   .card_details p {
-    font-size: clamp(0.6rem, 0.4rem + 0.5vw, 0.8rem);
+    font-size: clamp(0.6rem, 0.383rem + 0.3vw, 0.8rem);
   }
 
   .deck-navigation {
@@ -385,11 +363,11 @@ export default {
   .focus p {
     margin: 1rem;
     color: var(--clear);
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 0.583rem + 0.3vw, 1rem);
   }
 
   .focus .container {
-    width: 39.8rem;
+    width: 39rem;
     margin: 0.5rem;
     display: flex;
     flex-flow: row wrap;
@@ -446,7 +424,7 @@ export default {
 
   h2:not(.header h2) {
     font-family: "Unbounded";
-    font-size: clamp(1rem, 0.2rem + 2vw, 1.8rem);
+    font-size: clamp(1rem, 0.13rem + 1.4vw, 1.8rem);
     color: var(--accent);
   }
 
