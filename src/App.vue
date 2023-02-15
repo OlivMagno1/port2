@@ -157,7 +157,7 @@ export default {
 .background2 {
   height: 100vh;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   background-image: linear-gradient(
       to right,
       rgba(6, 7, 14, 1) 60%,
