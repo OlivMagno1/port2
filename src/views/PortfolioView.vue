@@ -167,7 +167,7 @@ export default {
         github: "https://github.com/OlivMagno1/arquimovelaria",
         folder: "movelaria",
         image: ["movelaria1"],
-        tags: ["Vue.js", "Javascript"],
+        tags: ["Design", "Vue.js", "Javascript"],
         sinopsis: "Página em brochura para uma empresa de móveis planejados",
         description:
           "Design minimalista de uma página de apresentação em brochura para uma empresa de móveis planejados. Apresenta além da introdução, os trabalhos já concluídos da empresa e as informações de contato. A página é responsiva, portanto funciona bem para usuários em desktop e mobile.",
@@ -178,7 +178,7 @@ export default {
         github: "https://github.com/OlivMagno1/cafe",
         folder: "cafe",
         image: ["cafe1", "cafe2", "cafe3"],
-        tags: ["Vue.js", "Responsivo"],
+        tags: ["Vue.js", "Interface", "Responsivo"],
         sinopsis: "Exercício de cópia de interface por observação",
         description:
           "Exercício de Reprodução da interface do website do Lobe (https://www.lobe.ai) apenas por observação. O foco deste exercício é apresentar a maior semelhança possível entre o design original e a reprodução, inclusive no comportamento responsivo da página",
@@ -189,7 +189,7 @@ export default {
         github: "https://github.com/OlivMagno1/plataforma",
         folder: "plataforma",
         image: ["plataforma1", "plataforma2", "plataforma3"],
-        tags: ["Vue.js", "Responsivo"],
+        tags: ["Vue.js", "Interface", "Responsivo"],
         sinopsis: "Exercício de cópia de interface por observação",
         description:
           "Exercício de Reprodução da interface do website do Ableton (https://www.ableton.com/en/about/) apenas por observação. O foco deste exercício é apresentar a maior semelhança possível entre o design original e a reprodução, inclusive no comportamento responsivo da página",
