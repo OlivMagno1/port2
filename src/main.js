@@ -9,12 +9,14 @@ import {
   faChevronRight,
   faChevronLeft,
   faXmark,
+  faCode,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faVuejs,
   faSquareJs,
   faHtml5,
   faCss3Alt,
+  faJava,
 } from "@fortawesome/free-brands-svg-icons";
 
 library.add(faChevronRight);
@@ -24,6 +26,8 @@ library.add(faVuejs);
 library.add(faSquareJs);
 library.add(faHtml5);
 library.add(faCss3Alt);
+library.add(faJava);
+library.add(faCode);
 
 createApp(App)
   .use(router)
