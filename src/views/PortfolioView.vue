@@ -212,6 +212,200 @@ export default {
 </script>
 
 <style scoped>
+@media screen and (max-width: 999px) {
+  .deck {
+    position: relative;
+    background-color: var(--secondary);
+    max-height: 12.6rem;
+    width: 12.6rem;
+    top: clamp(6rem, -1.609rem + 12.2vw, 13rem);
+    left: 1.2rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .card {
+    position: relative;
+    background-color: var(--primary-light);
+    color: var(--clear);
+    position: relative;
+
+    width: 4rem;
+    height: 4rem;
+    margin: 0.1rem;
+
+    transition: 0.2s;
+    cursor: pointer;
+  }
+
+  .card h2 {
+    font-family: "Unbounded";
+    font-size: 0.5rem;
+    color: var(--primary);
+  }
+
+  .close {
+    z-index: 100;
+    position: absolute;
+    top: clamp(0.5rem, 1.25vw, 1rem);
+    left: 11rem;
+  }
+
+  .card img {
+    object-fit: contain;
+    opacity: 0.7;
+    height: 4rem;
+    max-width: 100%;
+  }
+
+  .card_details {
+    position: absolute;
+    bottom: 0;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    text-align: justify;
+  }
+
+  .card_details p {
+    display: none;
+  }
+
+  .deck-navigation {
+    position: absolute;
+    top: 12.6rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 12.6rem;
+  }
+
+  .deck-navigation p {
+    cursor: default;
+    background-color: var(--primary-light);
+    padding: 0.5rem 1.25rem;
+    margin: 0 0.75rem;
+  }
+
+  .navigation-button {
+    cursor: pointer;
+    transition: 0.2s;
+    padding: 0.5rem 1.25rem;
+  }
+
+  .off {
+    cursor: default;
+    opacity: 0;
+  }
+
+  .focus:not(.valid) {
+    display: none;
+  }
+
+  .focus {
+    position: absolute;
+    top: clamp(6rem, -1.609rem + 12.2vw, 13rem);
+    left: 1.2rem;
+    width: 12.6rem;
+    min-height: 16.6rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .focus h2 {
+    font-size: 1rem;
+    color: var(--clear);
+    margin: 0.5rem;
+  }
+
+  .focus .album {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    height: 4rem;
+  }
+
+  .focus .album img {
+    margin: 0.5rem;
+    height: 15rem;
+    width: auto;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .focus p {
+    margin: 0.5rem;
+    color: var(--accent);
+    font-size: 0.6rem;
+  }
+
+  .focus .container {
+    width: 12.1rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+
+  .tag {
+    justify-content: flex-end;
+  }
+
+  .link {
+    justify-content: flex-start;
+  }
+
+  .focus .container p {
+    opacity: 0.3;
+    color: var(--clear);
+    margin-left: 1rem;
+  }
+
+  .focus .container a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 400;
+    margin-right: 1rem;
+    transition: 0.2s;
+  }
+
+  .focus .container a:hover {
+    opacity: 0.3;
+  }
+
+  .valid {
+    text-align: justify;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: var(--primary);
+  }
+
+  #placeholder-title {
+    color: var(--accent);
+    cursor: default;
+  }
+
+  .focus img {
+    object-fit: contain;
+    opacity: 0.7;
+    width: 5rem;
+    max-height: 100%;
+  }
+
+  h3 {
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+}
 @media screen and (min-width: 1000px) {
   .deck {
     position: relative;

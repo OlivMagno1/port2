@@ -9,6 +9,85 @@ export default {
 </script>
 
 <style>
+@media screen and (max-width: 999px) {
+  .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+
+  .header h1 {
+    position: absolute;
+    top: clamp(1.5rem, -0.13rem + 2.6vw, 3rem);
+    font-size: clamp(2rem, -1.261rem + 5.2vw, 5rem);
+    font-family: "Unbounded";
+    font-variation-settings: "wght" 200;
+    cursor: default;
+  }
+
+  .header h2 {
+    position: absolute;
+    top: clamp(1rem, -0.63rem + 2.6vw, 2.5rem);
+    margin-left: clamp(0.15rem, 0.071rem + 0.3vw, 0.35rem);
+
+    width: 10rem;
+
+    font-family: "Unbounded";
+    font-variation-settings: "wght" 200;
+    font-size: clamp(0.8rem, 0.148rem + 1vw, 1.4rem);
+    text-align: left;
+    color: var(--clear);
+
+    cursor: default;
+  }
+
+  .menu-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+
+    position: absolute;
+    top: clamp(3.8rem, -1.852rem + 9vw, 9rem);
+
+    height: 2rem;
+    width: 10rem;
+    z-index: 101;
+  }
+
+  .menu-header a,
+  .menu-header a:visited {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: clamp(0.7rem, 0.374rem + 0.5vw, 1rem);
+    transition: 0.2s;
+    margin-right: 1rem;
+  }
+
+  .background {
+    height: 100vh;
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: var(--secondary);
+    overflow-y: hidden;
+  }
+
+  .background2 {
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    background-image: linear-gradient(
+        to right,
+        rgba(6, 7, 14, 1) 60%,
+        rgba(6, 7, 14, 0.8)
+      ),
+      url("./assets/images/bg2.jpg");
+    background-size: cover;
+    overflow-y: hidden;
+  }
+}
+
 @media screen and (min-width: 1000px) {
   .header {
     position: absolute;
@@ -65,6 +144,32 @@ export default {
     font-size: clamp(0.7rem, 0.374rem + 0.5vw, 1rem);
     transition: 0.2s;
     margin-right: 1rem;
+  }
+
+  .background {
+    height: 100vh;
+    display: flex;
+    flex-flow: row nowrap;
+    background-image: linear-gradient(
+        to right,
+        rgba(6, 7, 14, 1) 60%,
+        rgba(6, 7, 14, 0.8)
+      ),
+      url("./assets/images/bg.jpg");
+    background-size: cover;
+  }
+
+  .background2 {
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    background-image: linear-gradient(
+        to right,
+        rgba(6, 7, 14, 1) 60%,
+        rgba(6, 7, 14, 0.8)
+      ),
+      url("./assets/images/bg2.jpg");
+    background-size: cover;
   }
 }
 
@@ -139,32 +244,6 @@ export default {
   text-align: center;
   background-color: var(--secondary);
   color: var(--accent);
-}
-
-.background {
-  height: 100vh;
-  display: flex;
-  flex-flow: row nowrap;
-  background-image: linear-gradient(
-      to right,
-      rgba(6, 7, 14, 1) 60%,
-      rgba(6, 7, 14, 0.8)
-    ),
-    url("./assets/images/bg.jpg");
-  background-size: cover;
-}
-
-.background2 {
-  height: 100vh;
-  display: flex;
-  flex-flow: column nowrap;
-  background-image: linear-gradient(
-      to right,
-      rgba(6, 7, 14, 1) 60%,
-      rgba(6, 7, 14, 0.8)
-    ),
-    url("./assets/images/bg2.jpg");
-  background-size: cover;
 }
 
 .menu-header a:hover {
