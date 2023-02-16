@@ -223,7 +223,7 @@ export default {
     display: flex;
     flex-flow: row wrap;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .card {

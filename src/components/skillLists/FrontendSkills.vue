@@ -62,6 +62,100 @@ export default {
 </script>
 
 <style scoped>
+@media screen and (max-width: 999px) {
+  .section-title {
+    color: var(--clear);
+    opacity: 0.4;
+    cursor: default;
+  }
+  .skill-list {
+    position: relative;
+    width: 12rem;
+    top: clamp(6rem, -1.609rem + 12.2vw, 13rem);
+    left: 1.5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition: 0.2s;
+    background-color: var(--secondary);
+  }
+
+  .skill-list .skill-item {
+    text-align: justify;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    transition: 0.2s;
+    background-color: var(--primary);
+    margin-top: 0.2rem;
+  }
+
+  .skill-item h2 {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: default;
+
+    height: 1rem;
+    width: 4rem;
+    font-size: 0.8rem;
+  }
+
+  .skill-item .large-text {
+    display: none;
+  }
+
+  .skill-item .small-text {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+
+    height: 1rem;
+    width: 1rem;
+    padding: 0.5rem;
+  }
+
+  .level-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    height: clamp(2rem, -0.174rem + 34.8vw, 4rem);
+    color: var(--accent);
+  }
+
+  .level-container p {
+    font-size: 0.6rem;
+    cursor: default;
+    transition: 0.6s;
+    opacity: 0.6;
+  }
+
+  .level-graph {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+  }
+
+  span {
+    margin: 0.1rem;
+
+    width: 1rem;
+    height: 0.2rem;
+    background-color: var(--clear);
+  }
+
+  .empty {
+    opacity: 0.4;
+  }
+}
+
 @media screen and (min-width: 1000px) {
   .section-title {
     color: var(--clear);

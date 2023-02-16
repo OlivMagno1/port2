@@ -19,8 +19,9 @@ export default {
 
   .header h1 {
     position: absolute;
-    top: clamp(1.5rem, -0.13rem + 2.6vw, 3rem);
-    font-size: clamp(2rem, -1.261rem + 5.2vw, 5rem);
+    top: 1.7rem;
+    left: 0.5rem;
+    font-size: 1.5rem;
     font-family: "Unbounded";
     font-variation-settings: "wght" 200;
     cursor: default;
@@ -29,6 +30,7 @@ export default {
   .header h2 {
     position: absolute;
     top: clamp(1rem, -0.63rem + 2.6vw, 2.5rem);
+    left: 0.5rem;
     margin-left: clamp(0.15rem, 0.071rem + 0.3vw, 0.35rem);
 
     width: 10rem;
@@ -48,7 +50,8 @@ export default {
     justify-content: flex-start;
 
     position: absolute;
-    top: clamp(3.8rem, -1.852rem + 9vw, 9rem);
+    top: 3.4rem;
+    left: 0.6rem;
 
     height: 2rem;
     width: 10rem;
@@ -70,21 +73,14 @@ export default {
     display: flex;
     flex-flow: row nowrap;
     background-color: var(--secondary);
-    overflow-y: hidden;
+    background-position: fixed;
   }
 
   .background2 {
-    height: 100vh;
     display: flex;
+    height: 100vh;
     flex-flow: column nowrap;
-    background-image: linear-gradient(
-        to right,
-        rgba(6, 7, 14, 1) 60%,
-        rgba(6, 7, 14, 0.8)
-      ),
-      url("./assets/images/bg2.jpg");
-    background-size: cover;
-    overflow-y: hidden;
+    background-color: var(--secondary);
   }
 }
 
