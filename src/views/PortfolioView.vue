@@ -8,6 +8,19 @@
       <router-link to="/">Home</router-link>
       <router-link to="/knowledge">Conhecimentos</router-link>
     </div>
+    <div
+      class="image-zoom-container"
+      v-show="imageZoom >= 0"
+      @click="changeZoom(-1)"
+    >
+      <img
+        class="image-zoom"
+        v-if="imageZoom >= 0"
+        :src="
+          require(`@/assets/images/${portfolioData[selectedProject].folder}/${portfolioData[selectedProject].image[imageZoom]}.jpg`)
+        "
+      />
+    </div>
     <div class="deck">
       <div
         class="close"
@@ -70,6 +83,7 @@
           :src="
             require(`@/assets/images/${portfolioData[selectedProject].folder}/${image}.jpg`)
           "
+          @click="changeZoom(imgIndex)"
         />
       </div>
       <p v-if="selectedProject >= 0">
@@ -98,6 +112,7 @@ export default {
   setup() {
     const selectedProject = ref(-1);
     const projectPage = ref(0);
+    const imageZoom = ref(-1);
 
     const changeProject = (index) => {
       selectedProject.value = -1;
@@ -125,6 +140,10 @@ export default {
     const checkLastPage = () => {
       if (projectPage.value + 8 > portfolioData.length) return true;
       else return false;
+    };
+
+    const changeZoom = (n) => {
+      imageZoom.value = n;
     };
 
     const nextPage = () => {
@@ -199,11 +218,13 @@ export default {
       portfolioData,
       selectedProject,
       projectPage,
+      imageZoom,
       changeProject,
       checkActual,
       checkValid,
       nextPage,
       prevPage,
+      changeZoom,
       checkFirstPage,
       checkLastPage,
     };
@@ -624,6 +645,24 @@ export default {
   h3 {
     font-weight: 400;
     font-size: 0.9rem;
+  }
+
+  .image-zoom-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1500;
+    backdrop-filter: blur(5px);
+    transition: 0.2s;
+  }
+
+  .image-zoom {
+    width: 20rem;
+    height: auto;
+    margin: 2.5rem;
+    transition: 0.2s;
   }
 }
 </style>
