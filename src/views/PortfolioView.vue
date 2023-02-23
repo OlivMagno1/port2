@@ -1,13 +1,5 @@
 <template>
   <div class="background">
-    <div class="header">
-      <h2>Magno Oliveira</h2>
-      <h1>Projetos</h1>
-    </div>
-    <div class="menu-header">
-      <router-link to="/">Home</router-link>
-      <router-link to="/knowledge">Conhecimentos</router-link>
-    </div>
     <div
       class="image-zoom-container"
       v-show="imageZoom >= 0"

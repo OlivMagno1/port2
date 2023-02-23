@@ -1,13 +1,5 @@
 <template>
   <div class="background">
-    <div class="header">
-      <h2>Front-end dev</h2>
-      <h1>OlivMagno</h1>
-    </div>
-    <div class="menu-header">
-      <router-link to="/knowledge">Conhecimentos</router-link>
-      <router-link to="/portfolio">Projetos</router-link>
-    </div>
     <div class="text-container">
       <p id="hello">Olá</p>
       <p class="text-box">
