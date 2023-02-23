@@ -163,8 +163,8 @@ export default {
       },
       {
         projectTitle: "Portfolio",
-        address: "placeholder",
-        github: "placeholder",
+        address: "https://jazzy-swan-6d4e74.netlify.app",
+        github: "https://github.com/OlivMagno1/folio",
         folder: "portfolio",
         image: ["portfolio1", "portfolio2"],
         tags: ["Vue.js", "Javascript"],
