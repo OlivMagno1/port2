@@ -1,5 +1,18 @@
 <template>
-  <router-view />
+  <div class="header">
+    <h2>Front-end dev</h2>
+    <h1>OlivMagno</h1>
+  </div>
+  <div class="menu-header">
+    <router-link to="/">Introdução</router-link>
+    <router-link to="/knowledge">Conhecimentos</router-link>
+    <router-link to="/portfolio">Projetos</router-link>
+  </div>
+  <router-view v-slot="{ Component }">
+    <Transition name="page-opacity" mode="out-in">
+      <component :is="Component" />
+    </Transition>
+  </router-view>
 </template>
 
 <script>
@@ -121,6 +134,7 @@ export default {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
+    align-items: center;
 
     position: absolute;
     top: clamp(3.8rem, -1.852rem + 9vw, 9rem);
@@ -132,8 +146,7 @@ export default {
     z-index: 101;
   }
 
-  .menu-header a,
-  .menu-header a:visited {
+  .menu-header a {
     color: var(--accent);
     text-decoration: none;
     font-weight: 400;
@@ -246,6 +259,12 @@ export default {
   color: var(--clear);
 }
 
+a.router-link-exact-active {
+  color: var(--clear);
+  transform: scale(1.2);
+  padding: 0 1rem;
+}
+
 .sub-header {
   font-size: 1rem;
   font-style: italic;
@@ -261,5 +280,15 @@ export default {
   height: 2rem;
   width: 50rem;
   z-index: 101;
+}
+
+.page-opacity-enter-active,
+.page-opacity-leave-active {
+  transition: 0.3s ease all;
+}
+
+.page-opacity-enter-from,
+.page-opacity-leave-to {
+  opacity: 0;
 }
 </style>
