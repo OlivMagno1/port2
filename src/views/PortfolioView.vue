@@ -656,10 +656,15 @@ export default {
     z-index: 1500;
     backdrop-filter: blur(5px);
     transition: 0.2s;
+    opacity: 0.4;
+  }
+
+  .image-zoom-container:hover {
+    opacity: 1;
   }
 
   .image-zoom {
-    width: 20rem;
+    width: clamp(20rem, 3.696rem + 26.1vw, 35rem);
     height: auto;
     margin: 2.5rem;
     transition: 0.2s;
