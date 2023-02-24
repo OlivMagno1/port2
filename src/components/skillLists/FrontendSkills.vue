@@ -64,15 +64,19 @@ export default {
 <style scoped>
 @media screen and (max-width: 999px) {
   .section-title {
+    font-weight: 100;
     color: var(--clear);
-    opacity: 0.4;
+    opacity: 0.8;
     cursor: default;
+    font-size: 2rem;
   }
+
   .skill-list {
     position: relative;
     left: clamp(1.25rem, -1.161rem + 10.7vw, 5rem);
     top: clamp(6rem, -1.609rem + 12.2vw, 13rem);
     width: clamp(20rem, 2.321rem + 78.6vw, 47.5rem);
+    margin-bottom: 1rem;
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
@@ -99,9 +103,9 @@ export default {
     justify-content: flex-start;
     cursor: default;
 
-    height: clamp(1rem, 0.116rem + 3.9vw, 2.375rem);
-    width: clamp(4rem, 0.464rem + 15.7vw, 9.5rem);
-    font-size: 0.8rem;
+    height: 6.79rem;
+    width: clamp(8.57rem, 0.995rem + 33.7vw, 20.354rem);
+    font-size: 1.4rem;
   }
 
   .skill-item .small-text {
@@ -110,21 +114,13 @@ export default {
     align-items: center;
     justify-content: center;
 
-    height: clamp(1rem, 0.116rem + 3.9vw, 2.375rem);
-    width: clamp(1rem, 0.116rem + 3.9vw, 2.375rem);
-    padding: 0.5rem;
+    height: 4.79rem;
+    width: clamp(1.86rem, 0.024rem + 8.3vw, 4.79rem);
+    padding: clamp(0.5rem, 0.179rem + 1.4vw, 1rem);
   }
 
   .skill-item .large-text {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
-
-    height: clamp(1rem, 0.116rem + 3.9vw, 2.375rem);
-    width: clamp(9rem, 1.045rem + 35.4vw, 21.375rem);
-    margin: 0 1rem 0 1rem;
-    font-size: clamp(0.6rem, 0.165rem + 0.7vw, 1rem);
+    display: none;
   }
   .level-container {
     display: flex;
@@ -147,7 +143,7 @@ export default {
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-    width: clamp(6rem, 0.696rem + 23.6vw, 14.25rem);
+    width: clamp(7.57rem, -0.005rem + 33.7vw, 19.354rem);
   }
 
   span {
