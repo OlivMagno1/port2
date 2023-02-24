@@ -70,9 +70,9 @@ export default {
   }
   .skill-list {
     position: relative;
-    max-width: 12rem;
+    left: clamp(1.25rem, -1.161rem + 10.7vw, 5rem);
     top: clamp(6rem, -1.609rem + 12.2vw, 13rem);
-    left: 1.5rem;
+    width: clamp(20rem, 2.321rem + 78.6vw, 47.5rem);
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
@@ -84,7 +84,7 @@ export default {
   .skill-list .skill-item {
     text-align: justify;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     align-items: center;
     justify-content: flex-start;
     transition: 0.2s;
@@ -99,13 +99,9 @@ export default {
     justify-content: flex-start;
     cursor: default;
 
-    height: 1rem;
-    width: 4rem;
+    height: clamp(1rem, 0.116rem + 3.9vw, 2.375rem);
+    width: clamp(4rem, 0.464rem + 15.7vw, 9.5rem);
     font-size: 0.8rem;
-  }
-
-  .skill-item .large-text {
-    display: none;
   }
 
   .skill-item .small-text {
@@ -114,11 +110,22 @@ export default {
     align-items: center;
     justify-content: center;
 
-    height: 1rem;
-    width: 1rem;
+    height: clamp(1rem, 0.116rem + 3.9vw, 2.375rem);
+    width: clamp(1rem, 0.116rem + 3.9vw, 2.375rem);
     padding: 0.5rem;
   }
 
+  .skill-item .large-text {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+
+    height: clamp(1rem, 0.116rem + 3.9vw, 2.375rem);
+    width: clamp(9rem, 1.045rem + 35.4vw, 21.375rem);
+    margin: 0 1rem 0 1rem;
+    font-size: clamp(0.6rem, 0.165rem + 0.7vw, 1rem);
+  }
   .level-container {
     display: flex;
     flex-flow: column nowrap;
@@ -140,13 +147,13 @@ export default {
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-    width: 6rem;
+    width: clamp(6rem, 0.696rem + 23.6vw, 14.25rem);
   }
 
   span {
-    margin: 0.1rem;
+    margin: clamp(0.1rem, -0.157rem + 1.1vw, 0.5rem) 0.1rem;
 
-    width: 1rem;
+    width: clamp(1rem, 0.036rem + 4.3vw, 2.5rem);
     height: 0.2rem;
     background-color: var(--clear);
   }
