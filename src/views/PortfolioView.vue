@@ -229,10 +229,10 @@ export default {
   .deck {
     position: relative;
     background-color: var(--secondary);
-    max-height: 20rem;
-    width: 20rem;
+    max-height: clamp(20rem, 2.321rem + 78.6vw, 47.5rem);
+    width: clamp(20rem, 2.321rem + 78.6vw, 47.5rem);
     top: clamp(6rem, -1.609rem + 12.2vw, 13rem);
-    left: 1.25rem;
+    left: clamp(1.25rem, -1.161rem + 10.7vw, 5rem);
     display: flex;
     flex-flow: row wrap;
     align-content: flex-start;
@@ -246,8 +246,8 @@ export default {
     color: var(--clear);
     position: relative;
 
-    width: 6rem;
-    height: 6rem;
+    width: clamp(6rem, 0.214rem + 25.7vw, 15rem);
+    height: clamp(6rem, 0.214rem + 25.7vw, 15rem);
     margin: 0.2rem;
 
     transition: 0.2s;
@@ -256,9 +256,9 @@ export default {
 
   .card h2 {
     font-family: "Unbounded";
-    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 0.543rem + 1.1vw, 1.2rem);
     background-color: var(--clear);
-    width: 6rem;
+    width: clamp(6rem, 0.214rem + 25.7vw, 15rem);
     color: var(--primary);
   }
 
@@ -266,13 +266,13 @@ export default {
     z-index: 100;
     position: absolute;
     top: clamp(0.5rem, 1.25vw, 1rem);
-    left: 18.5rem;
+    left: clamp(18.5rem, 0.5rem + 80vw, 46.5rem);
   }
 
   .card img {
     object-fit: contain;
     opacity: 0.7;
-    height: 6rem;
+    height: clamp(6rem, 0.214rem + 25.7vw, 15rem);
     max-width: 100%;
   }
 
@@ -291,14 +291,14 @@ export default {
 
   .deck-navigation {
     position: absolute;
-    top: 20rem;
+    top: clamp(20rem, 2.321rem + 78.6vw, 47.5rem);
 
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     height: 4rem;
-    width: 20rem;
+    width: clamp(20rem, 2.321rem + 78.6vw, 47.5rem);
   }
 
   .deck-navigation p {
@@ -326,9 +326,9 @@ export default {
   .focus {
     position: absolute;
     top: clamp(6rem, -1.609rem + 12.2vw, 13rem);
-    left: 1.25rem;
-    width: 20rem;
-    min-height: 24rem;
+    left: clamp(1.25rem, -1.161rem + 10.7vw, 5rem);
+    width: clamp(20rem, 2.321rem + 78.6vw, 47.5rem);
+    min-height: clamp(24rem, 6.321rem + 78.6vw, 51.5rem);
 
     display: flex;
     flex-flow: column nowrap;
