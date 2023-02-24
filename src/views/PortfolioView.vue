@@ -229,12 +229,13 @@ export default {
   .deck {
     position: relative;
     background-color: var(--secondary);
-    max-height: 12.6rem;
-    width: 12.6rem;
+    max-height: 20rem;
+    width: 20rem;
     top: clamp(6rem, -1.609rem + 12.2vw, 13rem);
-    left: 1.2rem;
+    left: 1.25rem;
     display: flex;
     flex-flow: row wrap;
+    align-content: flex-start;
     align-items: flex-start;
     justify-content: flex-start;
   }
@@ -245,9 +246,9 @@ export default {
     color: var(--clear);
     position: relative;
 
-    width: 4rem;
-    height: 4rem;
-    margin: 0.1rem;
+    width: 6rem;
+    height: 6rem;
+    margin: 0.2rem;
 
     transition: 0.2s;
     cursor: pointer;
@@ -255,7 +256,9 @@ export default {
 
   .card h2 {
     font-family: "Unbounded";
-    font-size: 0.5rem;
+    font-size: 0.8rem;
+    background-color: var(--clear);
+    width: 6rem;
     color: var(--primary);
   }
 
@@ -263,13 +266,13 @@ export default {
     z-index: 100;
     position: absolute;
     top: clamp(0.5rem, 1.25vw, 1rem);
-    left: 11rem;
+    left: 18.5rem;
   }
 
   .card img {
     object-fit: contain;
     opacity: 0.7;
-    height: 4rem;
+    height: 6rem;
     max-width: 100%;
   }
 
@@ -288,14 +291,14 @@ export default {
 
   .deck-navigation {
     position: absolute;
-    top: 12.6rem;
+    top: 20rem;
 
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     height: 4rem;
-    width: 12.6rem;
+    width: 20rem;
   }
 
   .deck-navigation p {
@@ -323,9 +326,9 @@ export default {
   .focus {
     position: absolute;
     top: clamp(6rem, -1.609rem + 12.2vw, 13rem);
-    left: 1.2rem;
-    width: 12.6rem;
-    min-height: 16.6rem;
+    left: 1.25rem;
+    width: 20rem;
+    min-height: 24rem;
 
     display: flex;
     flex-flow: column nowrap;
@@ -342,8 +345,8 @@ export default {
     flex-flow: row nowrap;
     align-items: center;
     justify-content: flex-start;
-    padding: 0.5rem;
-    height: 4rem;
+    padding: 0.2rem;
+    height: 8rem;
   }
 
   .focus .album img {
@@ -358,11 +361,11 @@ export default {
   .focus p {
     margin: 0.5rem;
     color: var(--accent);
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
 
   .focus .container {
-    width: 12.1rem;
+    width: 19rem;
     margin: 0.5rem;
     display: flex;
     flex-flow: row wrap;
@@ -374,6 +377,8 @@ export default {
   }
 
   .link {
+    position: absolute;
+    bottom: 0;
     justify-content: flex-start;
   }
 
