@@ -71,8 +71,7 @@ export default {
     z-index: 101;
   }
 
-  .menu-header a,
-  .menu-header a:visited {
+  .menu-header a {
     color: var(--accent);
     text-decoration: none;
     font-weight: 400;

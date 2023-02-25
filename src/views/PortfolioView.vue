@@ -229,7 +229,7 @@ export default {
   .deck {
     position: relative;
     background-color: var(--secondary);
-    max-height: clamp(20rem, 2.321rem + 78.6vw, 47.5rem);
+    height: clamp(18rem, 4.118rem + 69.4vw, 47.5rem);
     width: clamp(18rem, 4.118rem + 69.4vw, 47.5rem);
     top: clamp(6rem, -1.609rem + 12.2vw, 13rem);
     left: clamp(1rem, -0.882rem + 9.4vw, 5rem);
@@ -297,7 +297,7 @@ export default {
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    height: 3rem;
+    height: clamp(2rem, 1.059rem + 4.7vw, 4rem);
     width: clamp(18rem, 4.118rem + 69.4vw, 47.5rem);
   }
 
