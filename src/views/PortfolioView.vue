@@ -230,9 +230,9 @@ export default {
     position: relative;
     background-color: var(--secondary);
     max-height: clamp(20rem, 2.321rem + 78.6vw, 47.5rem);
-    width: clamp(20rem, 2.321rem + 78.6vw, 47.5rem);
+    width: clamp(18rem, 4.118rem + 69.4vw, 47.5rem);
     top: clamp(6rem, -1.609rem + 12.2vw, 13rem);
-    left: clamp(1.25rem, -1.161rem + 10.7vw, 5rem);
+    left: clamp(1rem, -0.882rem + 9.4vw, 5rem);
     display: flex;
     flex-flow: row wrap;
     align-content: flex-start;
@@ -246,8 +246,8 @@ export default {
     color: var(--clear);
     position: relative;
 
-    width: clamp(6rem, 0.214rem + 25.7vw, 15rem);
-    height: clamp(6rem, 0.214rem + 25.7vw, 15rem);
+    width: clamp(5.6rem, 1.176rem + 22.1vw, 15rem);
+    height: clamp(5.6rem, 1.176rem + 22.1vw, 15rem);
     margin: 0.2rem;
 
     transition: 0.2s;
@@ -256,9 +256,9 @@ export default {
 
   .card h2 {
     font-family: "Unbounded";
-    font-size: clamp(0.8rem, 0.543rem + 1.1vw, 1.2rem);
-    background-color: var(--clear);
-    width: clamp(6rem, 0.214rem + 25.7vw, 15rem);
+    font-size: 0.7rem;
+    background-color: var(--accent);
+    width: clamp(5.6rem, 1.176rem + 22.1vw, 15rem);
     color: var(--primary);
   }
 
@@ -266,13 +266,13 @@ export default {
     z-index: 100;
     position: absolute;
     top: clamp(0.5rem, 1.25vw, 1rem);
-    left: clamp(18.5rem, 0.5rem + 80vw, 46.5rem);
+    left: clamp(17rem, 3.118rem + 69.4vw, 46.5rem);
   }
 
   .card img {
     object-fit: contain;
     opacity: 0.7;
-    height: clamp(6rem, 0.214rem + 25.7vw, 15rem);
+    height: clamp(5.6rem, 1.176rem + 22.1vw, 15rem);
     max-width: 100%;
   }
 
@@ -291,14 +291,14 @@ export default {
 
   .deck-navigation {
     position: absolute;
-    top: clamp(20rem, 2.321rem + 78.6vw, 47.5rem);
+    top: clamp(18rem, 4.118rem + 69.4vw, 47.5rem);
 
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    height: 4rem;
-    width: clamp(20rem, 2.321rem + 78.6vw, 47.5rem);
+    height: 3rem;
+    width: clamp(18rem, 4.118rem + 69.4vw, 47.5rem);
   }
 
   .deck-navigation p {
@@ -327,8 +327,8 @@ export default {
     position: absolute;
     top: clamp(6rem, -1.609rem + 12.2vw, 13rem);
     left: clamp(1.25rem, -1.161rem + 10.7vw, 5rem);
-    width: clamp(20rem, 2.321rem + 78.6vw, 47.5rem);
-    min-height: clamp(24rem, 6.321rem + 78.6vw, 51.5rem);
+    width: clamp(18rem, 4.118rem + 69.4vw, 47.5rem);
+    min-height: clamp(22rem, 4.321rem + 78.6vw, 49.5rem);
 
     display: flex;
     flex-flow: column nowrap;

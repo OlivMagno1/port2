@@ -82,18 +82,25 @@ export default {
   }
 
   .background {
-    height: 100vh;
     display: flex;
     flex-flow: row nowrap;
     background-color: var(--secondary);
-    background-position: fixed;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
 
   .background2 {
     display: flex;
-    height: 100vh;
     flex-flow: column nowrap;
     background-color: var(--secondary);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
 }
 
