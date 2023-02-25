@@ -62,7 +62,7 @@ export default {
     flex-flow: row nowrap;
     justify-content: flex-start;
 
-    position: absolute;
+    position: fixed;
     top: 3.4rem;
     left: 0.6rem;
 
@@ -84,6 +84,7 @@ export default {
     display: flex;
     flex-flow: row nowrap;
     background-color: var(--secondary);
+    overflow-y: auto;
     position: fixed;
     top: 0;
     right: 0;
@@ -95,6 +96,7 @@ export default {
     display: flex;
     flex-flow: column nowrap;
     background-color: var(--secondary);
+    overflow-y: auto;
     position: fixed;
     top: 0;
     right: 0;
@@ -269,23 +271,6 @@ a.router-link-exact-active {
   color: var(--clear);
   transform: scale(1.2);
   padding: 0 1rem;
-}
-
-.sub-header {
-  font-size: 1rem;
-  font-style: italic;
-  font-weight: 400;
-  opacity: 0.5;
-  margin-bottom: 1rem;
-  color: var(--clear);
-
-  text-align: left;
-  position: absolute;
-  top: 11rem;
-  left: 5rem;
-  height: 2rem;
-  width: 50rem;
-  z-index: 101;
 }
 
 .page-opacity-enter-active,
