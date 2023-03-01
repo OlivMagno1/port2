@@ -85,7 +85,22 @@ export default {
     flex-flow: column nowrap;
     align-items: center;
     background-color: var(--secondary);
+  }
+
+  .background-skills {
     min-height: 30rem;
+  }
+
+  .background-intro {
+    min-height: 30rem;
+    position: relative;
+    text-align: justify;
+    align-items: flex-start;
+  }
+
+  .background-port {
+    min-height: 30rem;
+    position: relative;
   }
 }
 

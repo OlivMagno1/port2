@@ -21,6 +21,25 @@
 </template>
 
 <style scoped>
+@media screen and (max-width: 999px) {
+  #hello {
+    margin-bottom: 1rem;
+    margin-left: clamp(1rem, -0.882rem + 9.4vw, 5rem);
+
+    font-weight: 100;
+    font-size: 2rem;
+    color: var(--clear);
+    opacity: 0.8;
+  }
+
+  .text-box {
+    width: clamp(18rem, 1.765rem + 81.2vw, 52.5rem);
+    margin-left: clamp(1rem, -0.882rem + 9.4vw, 5rem);
+    font-size: clamp(0.8rem, 0.612rem + 0.9vw, 1.2rem);
+    margin-bottom: 0.5rem;
+  }
+}
+
 @media screen and (min-width: 1000px) {
   .text-container {
     width: clamp(59.4rem, 26.791rem + 52.2vw, 89.4rem);
