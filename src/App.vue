@@ -16,6 +16,16 @@
 </template>
 
 <script>
+//vh fix
+const documentHeight = () => {
+  const doc = document.documentElement;
+  var vh = window.innerHeight * 0.01;
+  doc.style.setProperty("--doc-vh", `${vh}px`);
+};
+window.addEventListener("resize", documentHeight);
+documentHeight();
+//End vh fix
+
 export default {
   name: "App",
 };
@@ -25,16 +35,17 @@ export default {
 @media screen and (max-width: 999px) {
   .header {
     position: relative;
-    height: 3.4rem;
     top: 0;
     left: 0;
     z-index: 100;
+
+    padding: 1rem 0 0 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
   }
 
   .header h1 {
-    position: absolute;
-    top: 1.7rem;
-    left: 0.5rem;
     font-size: 1.5rem;
     font-family: "Unbounded";
     font-variation-settings: "wght" 200;
@@ -42,13 +53,6 @@ export default {
   }
 
   .header h2 {
-    position: absolute;
-    top: clamp(1rem, -0.63rem + 2.6vw, 2.5rem);
-    left: 0.5rem;
-    margin-left: clamp(0.15rem, 0.071rem + 0.3vw, 0.35rem);
-
-    width: 10rem;
-
     font-family: "Unbounded";
     font-variation-settings: "wght" 200;
     font-size: clamp(0.8rem, 0.148rem + 1vw, 1.4rem);
@@ -62,12 +66,11 @@ export default {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
+    align-items: center;
 
     position: relative;
-    left: 0.6rem;
-
-    height: 2rem;
-    width: 10rem;
+    padding-left: 1rem;
+    margin: 0.5rem 0 1rem 0;
     z-index: 101;
   }
 
@@ -76,6 +79,7 @@ export default {
     text-decoration: none;
     font-weight: 400;
     font-size: clamp(0.7rem, 0.374rem + 0.5vw, 1rem);
+    text-align: left;
     transition: 0.2s;
     margin-right: 1rem;
   }
@@ -92,15 +96,16 @@ export default {
   }
 
   .background-intro {
-    min-height: 30rem;
     position: relative;
     text-align: justify;
     align-items: flex-start;
+    height: calc(calc(var(--doc-vh) * 100) - 100px);
   }
 
   .background-port {
-    min-height: 30rem;
     position: relative;
+    align-items: center;
+    height: calc(calc(var(--doc-vh) * 100) - 100px);
   }
 }
 
@@ -241,6 +246,7 @@ export default {
 }
 
 :root {
+  --doc-vh: 0;
   --primary: #0c0f1d;
   --primary-light: #161b33;
   --secondary: #06070e;
@@ -268,8 +274,6 @@ export default {
 
 a.router-link-exact-active {
   color: var(--clear);
-  transform: scale(1.2);
-  padding: 0 1rem;
 }
 
 .page-opacity-enter-active,

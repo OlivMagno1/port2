@@ -322,10 +322,7 @@ export default {
 
   .focus {
     position: absolute;
-    top: clamp(6rem, -1.609rem + 12.2vw, 13rem);
-    left: clamp(1.25rem, -1.161rem + 10.7vw, 5rem);
     width: clamp(18rem, 4.118rem + 69.4vw, 47.5rem);
-    min-height: clamp(22rem, 4.321rem + 78.6vw, 49.5rem);
 
     display: flex;
     flex-flow: column nowrap;
@@ -343,12 +340,12 @@ export default {
     align-items: center;
     justify-content: flex-start;
     padding: 0.2rem;
-    height: 8rem;
+    height: 7rem;
   }
 
   .focus .album img {
     margin: 0.5rem;
-    height: 15rem;
+    height: 10rem;
     width: auto;
     opacity: 0.6;
     cursor: pointer;
@@ -362,7 +359,7 @@ export default {
   }
 
   .focus .container {
-    width: 19rem;
+    width: 18rem;
     margin: 0.5rem;
     display: flex;
     flex-flow: row wrap;
@@ -374,8 +371,6 @@ export default {
   }
 
   .link {
-    position: absolute;
-    bottom: 0;
     justify-content: flex-start;
   }
 
