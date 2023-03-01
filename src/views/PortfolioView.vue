@@ -1,5 +1,5 @@
 <template>
-  <div class="background">
+  <div class="background-port bg">
     <div
       class="image-zoom-container"
       v-show="imageZoom >= 0"
@@ -229,10 +229,7 @@ export default {
   .deck {
     position: relative;
     background-color: var(--secondary);
-    height: clamp(18rem, 4.118rem + 69.4vw, 47.5rem);
     width: clamp(18rem, 4.118rem + 69.4vw, 47.5rem);
-    top: clamp(6rem, -1.609rem + 12.2vw, 13rem);
-    left: clamp(1rem, -0.882rem + 9.4vw, 5rem);
     display: flex;
     flex-flow: row wrap;
     align-content: flex-start;

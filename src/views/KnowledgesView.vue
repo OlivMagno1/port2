@@ -1,5 +1,5 @@
 <template>
-  <div class="background2">
+  <div class="background-skills bg">
     <FrontendSkills />
     <DevSkills />
   </div>

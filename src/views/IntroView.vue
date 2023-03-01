@@ -1,5 +1,5 @@
 <template>
-  <div class="background">
+  <div class="background-intro bg">
     <div class="text-container">
       <p id="hello">Olá</p>
       <p class="text-box">

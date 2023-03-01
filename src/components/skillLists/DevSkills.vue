@@ -73,9 +73,6 @@ export default {
 
   .skill-list {
     position: relative;
-    left: clamp(1.25rem, -1.161rem + 10.7vw, 5rem);
-    top: clamp(6rem, -1.609rem + 12.2vw, 13rem);
-    width: clamp(20rem, 2.321rem + 78.6vw, 47.5rem);
     margin-bottom: 1rem;
     display: flex;
     flex-flow: column nowrap;
@@ -94,6 +91,7 @@ export default {
     transition: 0.2s;
     background-color: var(--primary);
     margin-top: 0.2rem;
+    width: clamp(16rem, 2.118rem + 69.4vw, 45.5rem);
   }
 
   .skill-item h2 {
@@ -104,8 +102,8 @@ export default {
     cursor: default;
 
     height: 6.79rem;
-    width: clamp(8.57rem, 0.995rem + 33.7vw, 20.354rem);
-    font-size: 1.4rem;
+    width: clamp(9rem, 0.882rem + 40.6vw, 26.25rem);
+    font-size: 1rem;
   }
 
   .skill-item .small-text {
@@ -115,7 +113,7 @@ export default {
     justify-content: center;
 
     height: 4.79rem;
-    width: clamp(1.86rem, 0.024rem + 8.3vw, 4.79rem);
+    width: clamp(2rem, -0.235rem + 11.2vw, 6.75rem);
     padding: clamp(0.5rem, 0.179rem + 1.4vw, 1rem);
   }
 
@@ -143,7 +141,7 @@ export default {
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-    width: clamp(7.57rem, -0.005rem + 33.7vw, 19.354rem);
+    width: clamp(6rem, 0.588rem + 27.1vw, 17.5rem);
   }
 
   span {
