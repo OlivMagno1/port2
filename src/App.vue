@@ -24,7 +24,8 @@ export default {
 <style>
 @media screen and (max-width: 999px) {
   .header {
-    position: absolute;
+    position: relative;
+    height: 3.4rem;
     top: 0;
     left: 0;
     z-index: 100;
@@ -62,8 +63,7 @@ export default {
     flex-flow: row nowrap;
     justify-content: flex-start;
 
-    position: fixed;
-    top: 3.4rem;
+    position: relative;
     left: 0.6rem;
 
     height: 2rem;
@@ -80,28 +80,12 @@ export default {
     margin-right: 1rem;
   }
 
-  .background {
-    display: flex;
-    flex-flow: row nowrap;
-    background-color: var(--secondary);
-    overflow-y: auto;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-
-  .background2 {
+  .bg {
     display: flex;
     flex-flow: column nowrap;
+    align-items: center;
     background-color: var(--secondary);
-    overflow-y: auto;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    min-height: 30rem;
   }
 }
 
@@ -163,7 +147,7 @@ export default {
     margin-right: 1rem;
   }
 
-  .background {
+  .background-port {
     height: 100vh;
     display: flex;
     flex-flow: row nowrap;
@@ -176,7 +160,7 @@ export default {
     background-size: cover;
   }
 
-  .background2 {
+  .background-skills {
     height: 100vh;
     display: flex;
     flex-flow: column nowrap;
