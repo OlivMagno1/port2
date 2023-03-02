@@ -35,9 +35,7 @@ export default {
 @media screen and (max-width: 999px) {
   .header {
     position: relative;
-    top: 0;
     left: 0;
-    z-index: 100;
 
     padding: 1rem 0 0 1rem;
     display: flex;
@@ -47,45 +45,15 @@ export default {
 
   .header h1 {
     font-size: 1.5rem;
-    font-family: "Unbounded";
-    font-variation-settings: "wght" 200;
-    cursor: default;
-  }
-
-  .header h2 {
-    font-family: "Unbounded";
-    font-variation-settings: "wght" 200;
-    font-size: clamp(0.8rem, 0.148rem + 1vw, 1.4rem);
-    text-align: left;
-    color: var(--clear);
-
-    cursor: default;
   }
 
   .menu-header {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
-
     position: relative;
     padding-left: 1rem;
     margin: 0.5rem 0 1rem 0;
-    z-index: 101;
-  }
-
-  .menu-header a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 400;
-    font-size: clamp(0.7rem, 0.374rem + 0.5vw, 1rem);
-    text-align: left;
-    transition: 0.2s;
-    margin-right: 1rem;
   }
 
   .bg {
-    display: flex;
     flex-flow: column nowrap;
     align-items: center;
     background-color: var(--secondary);
@@ -112,42 +80,25 @@ export default {
 @media screen and (min-width: 1000px) {
   .header {
     position: absolute;
-    top: 0;
     left: clamp(1rem, -3.348rem + 7vw, 5rem);
-    z-index: 100;
   }
 
   .header h1 {
     position: absolute;
     top: clamp(1.5rem, -0.13rem + 2.6vw, 3rem);
     font-size: clamp(2rem, -1.261rem + 5.2vw, 5rem);
-    font-family: "Unbounded";
-    font-variation-settings: "wght" 200;
     cursor: default;
   }
 
   .header h2 {
+    margin-left: clamp(0.15rem, 0.071rem + 0.3vw, 0.35rem);
     position: absolute;
     top: clamp(1rem, -0.63rem + 2.6vw, 2.5rem);
-    margin-left: clamp(0.15rem, 0.071rem + 0.3vw, 0.35rem);
-
     width: 14rem;
-
-    font-family: "Unbounded";
-    font-variation-settings: "wght" 200;
-    font-size: clamp(0.8rem, 0.148rem + 1vw, 1.4rem);
-    text-align: left;
-    color: var(--clear);
-
     cursor: default;
   }
 
   .menu-header {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
-
     position: absolute;
     top: clamp(3.8rem, -1.852rem + 9vw, 9rem);
     left: clamp(0.9rem, -3.557rem + 7.1vw, 5rem);
@@ -155,21 +106,14 @@ export default {
     height: 2rem;
     width: 23rem;
     margin-left: clamp(0.15rem, 0.071rem + 0.3vw, 0.35rem);
-    z-index: 101;
   }
 
-  .menu-header a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 400;
-    font-size: clamp(0.7rem, 0.374rem + 0.5vw, 1rem);
-    transition: 0.2s;
-    margin-right: 1rem;
+  .bg {
+    height: calc(var(--doc-vh) * 100);
+    background-size: cover;
   }
 
   .background-port {
-    height: 100vh;
-    display: flex;
     flex-flow: row nowrap;
     background-image: linear-gradient(
         to right,
@@ -177,12 +121,9 @@ export default {
         rgba(6, 7, 14, 0.8)
       ),
       url("./assets/images/bg.jpg");
-    background-size: cover;
   }
 
   .background-skills {
-    height: 100vh;
-    display: flex;
     flex-flow: column nowrap;
     background-image: linear-gradient(
         to right,
@@ -268,12 +209,52 @@ export default {
   color: var(--accent);
 }
 
+.header {
+  top: 0;
+  z-index: 100;
+}
+
+.header h1 {
+  font-family: "Unbounded";
+  font-variation-settings: "wght" 200;
+}
+
+.header h2 {
+  font-family: "Unbounded";
+  font-variation-settings: "wght" 200;
+  font-size: clamp(0.8rem, 0.148rem + 1vw, 1.4rem);
+  text-align: left;
+  color: var(--clear);
+}
+
+.menu-header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 101;
+}
+
+.menu-header a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: clamp(0.7rem, 0.374rem + 0.5vw, 1rem);
+  text-align: left;
+  margin-right: 1rem;
+  transition: 0.2s;
+}
+
 .menu-header a:hover {
   color: var(--clear);
 }
 
 a.router-link-exact-active {
   color: var(--clear);
+}
+
+.bg {
+  display: flex;
 }
 
 .page-opacity-enter-active,

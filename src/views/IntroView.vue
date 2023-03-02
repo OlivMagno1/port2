@@ -23,20 +23,16 @@
 <style scoped>
 @media screen and (max-width: 999px) {
   #hello {
-    margin-bottom: 1rem;
     margin-left: clamp(1rem, -0.882rem + 9.4vw, 5rem);
-
-    font-weight: 100;
     font-size: 2rem;
-    color: var(--clear);
-    opacity: 0.8;
   }
 
   .text-box {
     width: clamp(18rem, 1.765rem + 81.2vw, 52.5rem);
     margin-left: clamp(1rem, -0.882rem + 9.4vw, 5rem);
-    font-size: clamp(0.8rem, 0.612rem + 0.9vw, 1.2rem);
     margin-bottom: 0.5rem;
+
+    font-size: clamp(0.8rem, 0.612rem + 0.9vw, 1.2rem);
   }
 }
 
@@ -54,14 +50,7 @@
   }
 
   #hello {
-    margin-bottom: 1rem;
-
-    font-family: "Unbounded";
-    font-weight: 100;
     font-size: clamp(2.5rem, 0.87rem + 2.61vw, 4rem);
-    color: var(--clear);
-    opacity: 0.8;
-
     cursor: default;
   }
 
@@ -69,7 +58,15 @@
     text-align: justify;
     margin-bottom: 1rem;
     width: clamp(35rem, 29.565rem + 8.7vw, 40rem);
+
     font-size: clamp(0.8rem, 0.365rem + 0.7vw, 1.2rem);
   }
+}
+
+#hello {
+  margin-bottom: 1rem;
+  font-weight: 100;
+  color: var(--clear);
+  opacity: 0.8;
 }
 </style>
