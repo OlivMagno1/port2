@@ -227,28 +227,20 @@ export default {
 <style scoped>
 @media screen and (max-width: 999px) {
   .deck {
-    position: relative;
-    background-color: var(--secondary);
     width: clamp(18rem, 4.118rem + 69.4vw, 47.5rem);
-    display: flex;
     flex-flow: row wrap;
     align-content: flex-start;
-    align-items: flex-start;
-    justify-content: flex-start;
+  }
+
+  .close {
+    top: clamp(0.5rem, 1.25vw, 1rem);
+    left: clamp(17rem, 3.118rem + 69.4vw, 46.5rem);
   }
 
   .card {
-    position: relative;
-    background-color: var(--primary-light);
-    color: var(--clear);
-    position: relative;
-
     width: clamp(5.6rem, 1.176rem + 22.1vw, 15rem);
     height: clamp(5.6rem, 1.176rem + 22.1vw, 15rem);
     margin: 0.2rem;
-
-    transition: 0.2s;
-    cursor: pointer;
   }
 
   .card h2 {
@@ -259,27 +251,13 @@ export default {
     color: var(--primary);
   }
 
-  .close {
-    z-index: 100;
-    position: absolute;
-    top: clamp(0.5rem, 1.25vw, 1rem);
-    left: clamp(17rem, 3.118rem + 69.4vw, 46.5rem);
-  }
-
   .card img {
-    object-fit: contain;
-    opacity: 0.7;
     height: clamp(5.6rem, 1.176rem + 22.1vw, 15rem);
-    max-width: 100%;
   }
 
   .card_details {
     position: absolute;
     bottom: 0;
-    flex-flow: column nowrap;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    text-align: justify;
   }
 
   .card_details p {
@@ -287,33 +265,9 @@ export default {
   }
 
   .deck-navigation {
-    position: absolute;
     top: clamp(18rem, 4.118rem + 69.4vw, 47.5rem);
-
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
     height: clamp(2rem, 1.059rem + 4.7vw, 4rem);
     width: clamp(18rem, 4.118rem + 69.4vw, 47.5rem);
-  }
-
-  .deck-navigation p {
-    cursor: default;
-    background-color: var(--primary-light);
-    padding: 0.5rem 1.25rem;
-    margin: 0 0.75rem;
-  }
-
-  .navigation-button {
-    cursor: pointer;
-    transition: 0.2s;
-    padding: 0.5rem 1.25rem;
-  }
-
-  .off {
-    cursor: default;
-    opacity: 0;
   }
 
   .focus:not(.valid) {
@@ -321,11 +275,7 @@ export default {
   }
 
   .focus {
-    position: absolute;
     width: clamp(18rem, 4.118rem + 69.4vw, 47.5rem);
-
-    display: flex;
-    flex-flow: column nowrap;
   }
 
   .focus h2 {
@@ -335,21 +285,12 @@ export default {
   }
 
   .focus .album {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: flex-start;
     padding: 0.2rem;
     height: 7rem;
   }
 
   .focus .album img {
-    margin: 0.5rem;
     height: 10rem;
-    width: auto;
-    opacity: 0.6;
-    cursor: pointer;
-    transition: 0.2s;
   }
 
   .focus p {
@@ -360,101 +301,31 @@ export default {
 
   .focus .container {
     width: 18rem;
-    margin: 0.5rem;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-  }
-
-  .tag {
-    justify-content: flex-end;
-  }
-
-  .link {
-    justify-content: flex-start;
-  }
-
-  .focus .container p {
-    opacity: 0.3;
-    color: var(--clear);
-    margin-left: 1rem;
-  }
-
-  .focus .container a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 400;
-    margin-right: 1rem;
-    transition: 0.2s;
-  }
-
-  .focus .container a:hover {
-    opacity: 0.3;
-  }
-
-  .valid {
-    text-align: justify;
-    align-items: flex-start;
-    justify-content: flex-start;
-    background-color: var(--primary);
-  }
-
-  #placeholder-title {
-    color: var(--accent);
-    cursor: default;
-  }
-
-  .focus img {
-    object-fit: contain;
-    opacity: 0.7;
-    width: 5rem;
-    max-height: 100%;
   }
 
   h3 {
     font-weight: 400;
     font-size: 0.9rem;
   }
+
+  .image-zoom-container {
+    position: fixed;
+  }
+
+  .image-zoom {
+    width: clamp(18rem, 4.118rem + 69.4vw, 47.5rem);
+    margin: 3rem 1rem;
+  }
 }
 @media screen and (min-width: 1000px) {
   .deck {
-    position: relative;
-    background-color: var(--secondary);
     height: clamp(27rem, 11.783rem + 24.3vw, 41rem);
     top: clamp(6rem, -1.609rem + 12.2vw, 13rem);
     left: clamp(1rem, -3.348rem + 7vw, 5rem);
-    display: flex;
     flex-flow: column nowrap;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-
-  .card {
-    display: flex;
-    flex-flow: row nowrap;
-    background-color: var(--primary-light);
-    color: var(--clear);
-    position: relative;
-
-    width: clamp(20rem, 9.13rem + 17.4vw, 30rem);
-    height: clamp(3.2rem, 1.243rem + 3.1vw, 5rem);
-    margin: clamp(0.05rem, 0.125vw, 0.1rem);
-
-    transition: 0.2s;
-    cursor: pointer;
-  }
-
-  .card:hover:not(chosen) {
-    background-color: var(--primary);
-  }
-
-  .chosen {
-    opacity: 0.3;
   }
 
   .close {
-    z-index: 100;
-    position: absolute;
     top: clamp(0.5rem, 1.25vw, 1rem);
     left: clamp(57.5rem, 46.63rem + 17.4vw, 67.5rem);
     cursor: pointer;
@@ -465,19 +336,29 @@ export default {
     transform: scale(1.5);
   }
 
-  .card img {
-    object-fit: contain;
-    opacity: 0.7;
+  .card {
+    display: flex;
+    flex-flow: row nowrap;
+
+    width: clamp(20rem, 9.13rem + 17.4vw, 30rem);
     height: clamp(3.2rem, 1.243rem + 3.1vw, 5rem);
-    max-width: 100%;
+    margin: clamp(0.05rem, 0.125vw, 0.1rem);
+  }
+
+  .card:hover:not(chosen) {
+    background-color: var(--primary);
+  }
+
+  .chosen {
+    opacity: 0.3;
+  }
+
+  .card img {
+    height: clamp(3.2rem, 1.243rem + 3.1vw, 5rem);
   }
 
   .card_details {
     display: flex;
-    flex-flow: column nowrap;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    text-align: justify;
     margin: 0 1rem;
   }
 
@@ -486,47 +367,20 @@ export default {
   }
 
   .deck-navigation {
-    position: absolute;
     bottom: 0;
-
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
     height: clamp(3.2rem, 1.243rem + 3.1vw, 5rem);
     width: clamp(20rem, 9.13rem + 17.4vw, 30rem);
     margin: 0.1rem;
-  }
-
-  .deck-navigation p {
-    cursor: default;
-    background-color: var(--primary-light);
-    padding: 0.5rem 1.25rem;
-    margin: 0 0.75rem;
-  }
-
-  .navigation-button {
-    cursor: pointer;
-    transition: 0.2s;
-    padding: 0.5rem 1.25rem;
   }
 
   .navigation-button:hover {
     background-color: var(--primary-light);
   }
 
-  .off {
-    cursor: default;
-    opacity: 0;
-  }
-
   .focus {
-    position: absolute;
     left: clamp(21.2rem, 5.44rem + 25.2vw, 35.7rem);
     top: clamp(6rem, -1.609rem + 12.2vw, 13rem);
 
-    display: flex;
-    flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
 
@@ -541,19 +395,13 @@ export default {
   }
 
   .focus .album {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: flex-start;
     margin: 1rem 0 0 1rem;
     padding: 0.5rem;
     height: clamp(10rem, 4.565rem + 8.7vw, 15rem);
   }
 
   .focus .album img {
-    margin: 0.5rem;
     height: 15rem;
-    width: auto;
     opacity: 0.6;
     cursor: pointer;
     transition: 0.2s;
@@ -571,58 +419,16 @@ export default {
 
   .focus .container {
     width: 39rem;
-    margin: 0.5rem;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-  }
-
-  .tag {
-    justify-content: flex-end;
   }
 
   .link {
-    justify-content: flex-start;
     position: absolute;
     bottom: 0.5rem;
     left: 0.5rem;
   }
 
-  .focus .container p {
-    opacity: 0.3;
-    color: var(--clear);
-    margin-left: 1rem;
-  }
-
-  .focus .container a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 400;
-    margin-right: 1rem;
-    transition: 0.2s;
-  }
-
   .focus .container a:hover {
     opacity: 0.3;
-  }
-
-  .valid {
-    text-align: justify;
-    align-items: flex-start;
-    justify-content: flex-start;
-    background-color: var(--primary);
-  }
-
-  #placeholder-title {
-    color: var(--accent);
-    cursor: default;
-  }
-
-  .focus img {
-    object-fit: contain;
-    opacity: 0.7;
-    width: 5rem;
-    max-height: 100%;
   }
 
   h2:not(.header h2) {
@@ -638,13 +444,6 @@ export default {
 
   .image-zoom-container {
     position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 1500;
-    backdrop-filter: blur(5px);
-    transition: 0.2s;
     opacity: 0.4;
   }
 
@@ -654,9 +453,149 @@ export default {
 
   .image-zoom {
     width: clamp(20rem, 3.696rem + 26.1vw, 35rem);
-    height: auto;
     margin: 2.5rem;
-    transition: 0.2s;
   }
+}
+
+.deck {
+  position: relative;
+  background-color: var(--secondary);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.close {
+  z-index: 100;
+  position: absolute;
+}
+
+.card {
+  background-color: var(--primary-light);
+  color: var(--clear);
+  position: relative;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.card img {
+  object-fit: contain;
+  opacity: 0.7;
+  max-width: 100%;
+}
+.card_details {
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  text-align: justify;
+}
+
+.deck-navigation {
+  position: absolute;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.deck-navigation p {
+  cursor: default;
+  background-color: var(--primary-light);
+  padding: 0.5rem 1.25rem;
+  margin: 0 0.75rem;
+}
+
+.navigation-button {
+  cursor: pointer;
+  transition: 0.2s;
+  padding: 0.5rem 1.25rem;
+}
+
+.off {
+  cursor: default;
+  opacity: 0;
+}
+
+.focus {
+  position: absolute;
+
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.focus .album {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.focus .album img {
+  margin: 0.5rem;
+  width: auto;
+}
+
+.focus .container {
+  margin: 0.5rem;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.tag {
+  justify-content: flex-end;
+}
+
+.link {
+  justify-content: flex-start;
+}
+
+.focus .container p {
+  opacity: 0.3;
+  color: var(--clear);
+  margin-left: 1rem;
+}
+
+.focus .container a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 400;
+  margin-right: 1rem;
+  transition: 0.2s;
+}
+
+.valid {
+  text-align: justify;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: var(--primary);
+}
+
+#placeholder-title {
+  color: var(--accent);
+  cursor: default;
+}
+
+.focus img {
+  object-fit: contain;
+  opacity: 0.7;
+  width: 5rem;
+  max-height: 100%;
+}
+
+.image-zoom-container {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1500;
+  backdrop-filter: blur(5px);
+  transition: 0.2s;
+}
+
+.image-zoom {
+  height: auto;
+  transition: 0.2s;
 }
 </style>
