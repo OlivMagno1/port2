@@ -159,7 +159,7 @@ export default {
         tags: ["Vue.js", "Javascript", "CSS3"],
         sinopsis: "Reprodução do jogo de celular da cobrinha",
         description:
-          "Reprodução do famoso jogo de celular da cobrinha. Todo o funcionamento do jogo foi feito em javascript, com a parte gráfica feita por CSS. Responsivo, portanto pode ser jogado por Desktop ou por Smartphone",
+          "Reimaginação do famoso jogo de celular da cobrinha. Todo o funcionamento do jogo foi feito em javascript e a interface por CSS. Responsivo, portanto pode ser jogado por Desktop ou por Smartphone",
       },
       {
         projectTitle: "Aplicativo",
