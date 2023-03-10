@@ -151,11 +151,22 @@ export default {
 
     const portfolioData = [
       {
+        projectTitle: "Snake",
+        address: "https://stately-banoffee-0c1750.netlify.app",
+        github: "https://github.com/OlivMagno1/snake",
+        folder: "snake",
+        image: ["snake1", "snake2"],
+        tags: ["Vue.js", "Javascript", "CSS3"],
+        sinopsis: "Reprodução do jogo de celular da cobrinha",
+        description:
+          "Reprodução do famoso jogo de celular da cobrinha. Todo o funcionamento do jogo foi feito em javascript, com a parte gráfica feita por CSS. Responsivo, portanto pode ser jogado por Desktop ou por Smartphone",
+      },
+      {
         projectTitle: "Aplicativo",
         address: "https://admirable-baklava-67109e.netlify.app/",
         github: "https://github.com/OlivMagno1/loginsystem",
         folder: "aplicativo",
-        image: ["placeholder1"],
+        image: ["aplicativo1"],
         tags: ["Vue.js", "Javascript", "Stytch", "Funções Serverless"],
         sinopsis: "Sistema de Cadastro e Login com base em e-mail e senha",
         description:
